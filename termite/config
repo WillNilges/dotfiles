@@ -1,3 +1,10 @@
+[options]
+font = Hack Nerd Font 18
+#font = xos4 Terminus 18
+#font = Droid Sans Mono 18
+#font = Ubuntu Monospace 16
+
+
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
@@ -53,3 +60,4 @@ color4  = #33859e
 color6  = #33859E
 # green
 color2  = #2aa889
+

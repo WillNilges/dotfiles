@@ -15,8 +15,8 @@ highlight = #586e75
 
 # Colors from color0 to color254 can be set
 
-# base03
-color8 = #002b36
+# base03 - originally 002b36 (if too dark go to 7197a4)
+color8 = #587d8a
 # base02
 color0 = #073642
 # base01
