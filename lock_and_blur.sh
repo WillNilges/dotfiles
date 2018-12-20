@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Drop this file into /usr/local/bin/ to ensure that it can't be modified by non-root people.
+
 # set the icon and a temporary location for the screenshot to be stored
 icon="$HOME/Pictures/Icons/lock-icon-light.png"
 tmpbg='/tmp/screen.png'
