@@ -73,10 +73,10 @@ bindsym $mod+Tab exec rofi -font "consolas 22" -show window
 #bindsym $mod+f exec ranger
 
 # lock screeen
-bindsym $mod+l exec /usr/local/bin/lock_and_blur.sh
+bindsym $mod+l exec bash /usr/local/bin/lock_and_blur.sh
 
 # lock screen and sleep
-bindsym $mod+Shift+l exec /usr/local/bin/lock_and_blur.sh && systemctl suspend
+bindsym $mod+Shift+l exec bash /usr/local/bin/lock_and_blur.sh && systemctl suspend
 
 # start firefox
 bindsym $mod+Shift+w exec firefox
