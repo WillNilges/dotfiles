@@ -1,0 +1,88 @@
+/*
+* Your Stylesheet
+*
+* This stylesheet is loaded when Atom starts up and is reloaded automatically
+* when it is changed and saved.
+*
+* Add your own CSS or Less to fully customize Atom.
+* If you are unfamiliar with Less, you can read more about it here:
+* http://lesscss.org
+*/
+
+
+/*
+* Examples
+* (To see them, uncomment and save)
+*/
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  //color: white;
+  background-color: black;
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}
+
+atom-text-editor::shadow {
+  .comment {
+    color: grey;
+  }
+}
+atom-text-editor::shadow .gutter {
+    //background-color: green;
+}
+atom-text-editor::shadow .gutter{
+  .line-numbers{
+    color: red;
+  }
+}
+.editor .gutter{
+  .line-number{
+    color:lightgrey;
+  }
+  .line-number.cursor-line{
+    color:lime;
+  }
+}
+.editor.is-focused {
+  .line.cursor-line {
+    background: #252525;
+  }
+}
+.editor .selection .region {
+background-color: #353535;
+}
+
+atom-text-editor::shadow .invisible-character { color: #005577 }
+
+.bracket-matcher {
+    border-bottom: 1px solid lime;
+    position: absolute;
+    border: 1px solid rgba(0, 255, 0, 0.7);
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+atom-text-editor::shadow .variable {
+  color: #DDDDDD;
+}
+// atom-text-editor::shadow .cursor-line .indent-guide {
+//   box-shadow: inset 1px 0 0 red;
+// }
+
+.indent-guide-improved {
+  background-color: #005577;
+  &.indent-guide-stack {
+    background-color: #005577;
+    &.indent-guide-active {
+      background-color: #009999;
+    }
+  }
+}
