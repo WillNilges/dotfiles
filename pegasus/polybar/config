@@ -51,20 +51,20 @@ border-color = #00000000
 padding-left = 0
 padding-right = 1
 
-module-margin-left = 2
+module-margin-left = 1
 module-margin-right = 1
 
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
 
-font-0 = fixed:pixelsize=16;1
-font-1 = unifont:fontformat=truetype:pixelsize=12:antialias=false;0
-font-2 = "Wuncon Siji:pixelsize=24;1"
+font-0 = "Hack Nerd Font:pixelsize=16;0"
+font-1 = ttf-unifont:fontformat=truetype:pixelsize=16:antialias=false;1
+;font-2 = "Wuncon Siji:pixelsize=24;2"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right = wlan pulseaudio battery memory cpu date
+modules-right = wlan xbacklight pulseaudio battery memory cpu date
 
 tray-position = right
 tray-padding = 2
@@ -194,19 +194,22 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
+format = <label>
+;<bar>
+label = 😎 %percentage%%
 
 bar-width = 10
-bar-indicator = |
+bar-indicator = []
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #55cc99
+format-underline = #55cc99
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
+
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -233,7 +236,7 @@ format-underline = #55cc99
 format-overline = #55cc99
 ;format-padding = 2
 
-label = CPU %percentage:2%%
+label =   %percentage:2%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 5
@@ -263,32 +266,34 @@ ramp-coreload-7-foreground = #ff3b51
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #55cc99
 ;0a6cf5
-label = RAM %percentage_used%%
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <ramp-signal> WIFI <label-connected>
+format-connected =  <label-connected>
 format-connected-underline = #55cc99
 label-connected = %essid%
 
-format-disconnected = WIFI DC'ed!
+;
+
+format-disconnected =  DC'ed!
 format-disconnected-underline = ${colors.secondary}
 ;${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ ramp-signal-0 = 
+ ramp-signal-1 = .
+ ramp-signal-2 = 
+ ramp-signal-3 = 
+ ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -297,11 +302,11 @@ interface = eth0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
+format-disconnected = ""
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -317,7 +322,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #55cc99
 #meme!0a6cf5
@@ -331,7 +336,7 @@ format-volume = <label-volume>
 format-volume-underline = #55cc99
 ;0a6cf5
 ;<bar-volume>
-label-volume = ♪ VOL %percentage%%
+label-volume = ♪ %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = ♪ muted
@@ -390,18 +395,18 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> CHG <label-charging>
+format-charging = ⚡ CHG <label-charging>
 format-charging-underline = #0a6cf5 
 #memes!55cc99
 
-format-discharging = <animation-discharging> BAT <label-discharging>
+format-discharging =  <label-discharging>
 format-discharging-underline = #ffb52a
 
-format-full-prefix = " "
+;format-full-prefix = "🔌 "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full = FUL
+format-full =  FUL
 format-full-underline = #55cc99
-#memes!0a6cf5
+;#memes!0a6cf5
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -414,9 +419,9 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
