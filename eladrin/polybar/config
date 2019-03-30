@@ -54,10 +54,9 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
 
-#font-0 = fixed:pixelsize=12;1
-font-0 = "Noto Sans Mono:size=12:antialias=true;0"
-font-1 = fixed:pixelsize=12;1
-font-2 = "Wuncon Siji:pixelsize=14;2"
+font-0 = "NotoSansMono Nerd Font:size=12:antialias=true;0"
+font-1 = "Unifont Nerd Font:style=Medium:fontformat=truetype:antialias=true:size=16;1"
+;font-2 = "Wuncon Siji:size=16;2"
 
 modules-left = i3
 modules-center = xwindow 
@@ -212,15 +211,6 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
-;[module/cpu]
-;type = internal/cpu
-;interval = 2
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #55ccba
-;0a6cf5
-;label = %percentage:2%%
-
 [module/cpu]
 type = internal/cpu
 interval = 0.5
@@ -232,7 +222,7 @@ format-underline = #55ccba
 format-overline = #55ccba
 ;format-padding = 2
 
-label =  %percentage:2%%
+label =  %percentage:2%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 5
@@ -262,7 +252,7 @@ ramp-coreload-7-foreground = #ff3b51
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #55ccba
 ;0a6cf5
@@ -273,7 +263,7 @@ type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected =  <label-connected>
 format-connected-underline = #55ccba
 label-connected = %essid%
 
@@ -321,7 +311,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #55ccba
 #meme!0a6cf5
 
-label = %date% %time%
+label =  %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -398,7 +388,7 @@ format-charging-underline = #0a6cf5
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = #ffb52a
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full = FUL
 format-full-underline = #55ccba
@@ -415,9 +405,9 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
