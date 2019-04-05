@@ -1,0 +1,4 @@
+rofi.theme:		/usr/share/rofi/themes/solarized_alternate.rasi
+rofi.font:		consolas 22
+rofi.modi:		drun,run,window
+rofi.theme: /usr/share/rofi/themes/emerald.rasi
