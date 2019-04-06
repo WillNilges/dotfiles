@@ -196,7 +196,7 @@ type = internal/xbacklight
 
 format = <label>
 ;<bar>
-label = 😎 %percentage%%
+label =  %percentage%%
 
 bar-width = 10
 bar-indicator = []
