@@ -27,6 +27,7 @@ foreground-alt = #ddd
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+flavor = #55cc99
 
 [bar/wilnil]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -54,20 +55,16 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-;font-0 = fixed:pixelsize=10;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
-
 font-0 = "Hack Nerd Font:pixelsize=16;0"
 font-1 = ttf-unifont:fontformat=truetype:pixelsize=16:antialias=false;1
-;font-2 = "Wuncon Siji:pixelsize=24;2"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right = wlan xbacklight pulseaudio battery memory cpu date
+modules-right = wlan xbacklight pulseaudio battery filesystem memory cpu date
 
 tray-position = right
 tray-padding = 2
+
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -112,9 +109,12 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+mount-1 = /home
+
+label-mounted = %{F#AAA}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-underline= ${colors.flavor}
 
 [module/bspwm]
 type = internal/bspwm
@@ -155,7 +155,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = #cd212329
 ;${module/bspwm.label-focused-background}
-label-focused-underline = #55cc99
+label-focused-underline = ${colors.flavor}
 ;${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
@@ -195,7 +195,6 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label>
-;<bar>
 label =  %percentage%%
 
 bar-width = 10
@@ -204,8 +203,8 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #55cc99
-format-underline = #55cc99
+bar-fill-foreground = ${colors.flavor}
+format-underline = ${colors.flavor}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -221,7 +220,7 @@ card = intel_backlight
 ;interval = 2
 ;format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #55cc99
+;format-underline = ${colors.flavor}
 ;0a6cf5
 ;label = %percentage:2%%
 
@@ -230,10 +229,10 @@ type = internal/cpu
 interval = 0.5
 
 format = <label> <ramp-coreload>
-format-background = #55cc99
+format-background = ${colors.flavor}
 format-foreground = #2a5c45
-format-underline = #55cc99
-format-overline = #55cc99
+format-underline = ${colors.flavor}
+format-overline = ${colors.flavor}
 ;format-padding = 2
 
 label =   %percentage:2%%
@@ -268,7 +267,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #55cc99
+format-underline = ${colors.flavor}
 ;0a6cf5
 label = %percentage_used:2%%
 
@@ -278,7 +277,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected =  <label-connected>
-format-connected-underline = #55cc99
+format-connected-underline = ${colors.flavor}
 label-connected = %essid%
 
 format-disconnected =  DC'ed!
@@ -322,7 +321,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #55cc99
+format-underline = ${colors.flavor}
 #meme!0a6cf5
 
 label = %date% %time%
@@ -331,7 +330,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-underline = #55cc99
+format-volume-underline = ${colors.flavor}
 ;0a6cf5
 ;<bar-volume>
 label-volume = ♪ %percentage%%
@@ -403,7 +402,7 @@ format-discharging-underline = #ffb52a
 ;format-full-prefix = "🔌 "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full =  FUL
-format-full-underline = #55cc99
+format-full-underline = ${colors.flavor}
 ;#memes!0a6cf5
 
 ramp-capacity-0 = 

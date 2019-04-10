@@ -6,10 +6,13 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack Nerd Font 8
+font pango:Hack Nerd Font 14
 
 # Increases i3 scaling
-exec xrandr --dpi 196
+#exec xrandr --dpi 196
+
+# Delet window borders
+new_window 1pixel
 
 # color defines for zenburn styled i3
 set $bg     #2c2c2c
@@ -47,9 +50,9 @@ bindsym $mod+Shift+q kill
 
 # Rofi shit. Run programs and switch windows.
 #bindsym $mod+z exec rofi -show drun
-bindsym $mod+z exec rofi -font "consolas 22" -show drun # Commands
-bindsym $mod+x exec rofi -font "consolas 22" -show run # Applications
-bindsym $mod+Tab exec rofi -font "consolas 22" -show window
+bindsym $mod+z exec rofi -font "Hack Nerd Font 22" -show drun # Commands
+bindsym $mod+x exec rofi -font "Hack Nerd Font 22" -show run # Applications
+bindsym $mod+Tab exec rofi -font "Hack Nerd Font 22" -show window
 
 # start ranger (a file manager) <BROKEN>
 #bindsym $mod+f exec ranger
@@ -68,7 +71,7 @@ exec --no-startup-id xss-lock -n "i3-nagbar -t warning -m 'Screen Locking...'"  
 bindsym $mod+Shift+w exec firefox
 
 # start thunar
-bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+f exec thunar
 
 # Take a screenshot with Spectacle
 bindsym Print exec spectacle
