@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #cd212329
+background = #cc212329
 # 222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
@@ -153,7 +153,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #cd212329
+label-focused-background = ${colors.background}
 ;${module/bspwm.label-focused-background}
 label-focused-underline = ${colors.flavor}
 ;${module/bspwm.label-focused-underline}
@@ -280,7 +280,7 @@ format-connected =  <label-connected>
 format-connected-underline = ${colors.flavor}
 label-connected = %essid%
 
-format-disconnected =  DC'ed!
+format-disconnected =  DC'ed!
 format-disconnected-underline = ${colors.secondary}
 ;${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
@@ -336,7 +336,7 @@ format-volume-underline = ${colors.flavor}
 label-volume = ♪ %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = ♪ muted
+label-muted =  muted
 label-muted-foreground = #666
 format-muted-underline = ${colors.secondary}
 

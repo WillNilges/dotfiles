@@ -12,7 +12,9 @@ font pango:Hack Nerd Font 14
 #exec xrandr --dpi 196
 
 # Delet window borders
-new_window 1pixel
+#new_window 1pixel # deprecated
+default_border pixel 2
+hide_edge_borders none
 
 # color defines for zenburn styled i3
 set $bg     #2c2c2c

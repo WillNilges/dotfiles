@@ -1,0 +1,68 @@
+[colors]
+# If both of these are unset, cursor falls back to the foreground color,
+# and cursor_foreground falls back to the background color.
+cursor = #16A085
+cursor_foreground = #ECF0F1
+
+foreground = #ECF0F1
+foreground_bold = #ECF0F1
+
+# 20% background transparency (requires a compositor)
+background = rgba(31, 45, 58, 0.8)
+
+# If unset, will reverse foreground and background
+highlight = #2980B9
+
+# Colors from color0 to color254 can be set
+
+# <insert color here>
+color0 = #1F2D3A
+
+# <insert color here>
+color1 = #C0392B
+
+# <insert color here>
+color2 = #27AE60
+
+# <insert color here>
+color3 = #F39C12
+
+# <insert color here>
+color4 = #2980B9
+
+#purple
+color5 = #ad69c8
+#dc8dfc
+#bf72df
+#8E44AD
+
+# <insert color here>
+color6 = #1da388
+#55cc99
+#16A085
+
+# <insert color here>
+color7 = #c3c7ca
+#a8acaf
+#84888B
+
+# <insert color here>
+color8 = #9e9e9e
+#67798e
+#2C3E50
+color9 = #E74C3C
+color10 = #2ECC71
+color11 = #F1C40F
+color12 = #3498DB
+
+# Light purple
+color13 = #dc8dfc
+#ad69c8
+#bb76d6
+#9B59B6
+color14 = #2AA198
+color15 = #ECF0F1
+
+[options]
+font = Hack Nerd Font 18
+
