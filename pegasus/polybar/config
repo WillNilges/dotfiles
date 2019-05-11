@@ -18,7 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #cc212329
+background = #cc1f2d3a
+#cc212329
 # 222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
@@ -50,7 +51,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 1
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 1
@@ -58,8 +59,8 @@ module-margin-right = 1
 font-0 = "Hack Nerd Font:pixelsize=16;0"
 font-1 = ttf-unifont:fontformat=truetype:pixelsize=16:antialias=false;1
 
-modules-left = i3
-modules-center = xwindow 
+modules-left = i3 xwindow
+modules-center =
 modules-right = wlan xbacklight pulseaudio battery filesystem memory cpu date
 
 tray-position = right
@@ -147,7 +148,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
