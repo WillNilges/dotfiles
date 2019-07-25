@@ -334,10 +334,10 @@ format-volume = <label-volume>
 format-volume-underline = ${colors.flavor}
 ;0a6cf5
 ;<bar-volume>
-label-volume = ♪ %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted =  muted
+label-muted =  0%
 label-muted-foreground = #666
 format-muted-underline = ${colors.secondary}
 
@@ -397,18 +397,19 @@ format-charging = ⚡ <label-charging>
 format-charging-underline = #0a6cf5 
 #memes!55cc99
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = #ffb52a
 
-;format-full-prefix = "🔌 "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full =  FUL
 format-full-underline = ${colors.flavor}
 ;#memes!0a6cf5
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
