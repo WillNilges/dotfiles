@@ -58,9 +58,9 @@ font-0 = "NotoSansMono Nerd Font:size=12:antialias=true;0"
 font-1 = "Unifont Nerd Font:style=Medium:fontformat=truetype:antialias=true:size=16;1"
 ;font-2 = "Wuncon Siji:size=16;2"
 
-modules-left = i3
-modules-center = xwindow 
-modules-right = wlan xbacklight pulseaudio battery memory cpu date
+modules-left = i3 xwindow
+#modules-center =  
+modules-right = wlan xbacklight pulseaudio battery filesystem memory cpu date
 
 tray-position = right
 tray-padding = 1
@@ -107,10 +107,15 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /home
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+;label-0 = 
+;label-1 = 
+
+label-mounted = %{F#aaa}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-underline= #11cc77
 
 [module/bspwm]
 type = internal/bspwm
@@ -151,7 +156,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = #cd212329
 ;${module/bspwm.label-focused-background}
-label-focused-underline = #55ccba
+label-focused-underline = #11cc77
 ;${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
@@ -192,7 +197,7 @@ type = internal/xbacklight
 
 format = <label>
 ;<bar>
-label = 😎 %percentage%%
+label =  %percentage%%
 
 bar-width = 10
 bar-indicator = []
@@ -200,8 +205,8 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #55ccba
-format-underline = #55ccba
+bar-fill-foreground = #11cc77
+format-underline = #11cc77
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -216,10 +221,10 @@ type = internal/cpu
 interval = 0.5
 
 format = <label> <ramp-coreload>
-format-background = #55ccba
+format-background = #11cc77
 format-foreground = #2a5c45
-format-underline = #55ccba
-format-overline = #55ccba
+format-underline = #11cc77
+format-overline = #11cc77
 ;format-padding = 2
 
 label =  %percentage:2%%
@@ -252,9 +257,9 @@ ramp-coreload-7-foreground = #ff3b51
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #55ccba
+format-underline = #11cc77
 ;0a6cf5
 label = %percentage_used%%
 
@@ -264,7 +269,7 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected =  <label-connected>
-format-connected-underline = #55ccba
+format-connected-underline = #11cc77
 label-connected = %essid%
 
 format-disconnected =  DC'ed!
@@ -306,9 +311,9 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #55ccba
+format-underline = #11cc77
 #meme!0a6cf5
 
 label = %date% %time%
@@ -317,13 +322,13 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-underline = #55ccba
+format-volume-underline = #11cc77
 ;0a6cf5
 ;<bar-volume>
-label-volume = ♪ %percentage:2%%
+label-volume =  %percentage:2%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = ♪ muted
+label-muted =  0%
 label-muted-foreground = #666
 format-muted-underline = ${colors.secondary}
 
@@ -383,20 +388,32 @@ full-at = 100
 format-charging = ⚡ <label-charging>
 #<animation-charging>
 format-charging-underline = #0a6cf5 
-#memes!55ccba
+#memes!11cc77
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = #ffb52a
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full = FUL
-format-full-underline = #55ccba
+format-full-underline = #11cc77
 #memes!0a6cf5
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+;ramp-capacity-0 = 
+;ramp-capacity-1 = 
+;ramp-capacity-2 = 
+;ramp-capacity-3 = 
+;ramp-capacity-4 = 
+;ramp-capacity-5 = 
+;ramp-capacity-6 = 
+;ramp-capacity-7 = 
+;ramp-capacity-8 = 
+;ramp-capacity-9 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
