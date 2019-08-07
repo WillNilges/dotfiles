@@ -18,5 +18,5 @@ convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"
 # lock the screen with the blurred screenshot
 i3lock -i "$tmpbg" -f
 
-# Delete tmpbg for security purposes
-rm $tmpbg
+# delet the screenshot for security
+rm "$tmpbg"

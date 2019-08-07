@@ -1,0 +1,25 @@
+[global_config]
+  title_font = Hack Nerd Font Mono 11
+  title_transmit_bg_color = "#55cc99"
+  title_transmit_fg_color = "#000000"
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.75
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Hack Nerd Font Mono 18
+    foreground_color = "#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
