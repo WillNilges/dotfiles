@@ -5,6 +5,7 @@ set list
 colorscheme industry
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
