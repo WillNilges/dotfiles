@@ -21,7 +21,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
 
 PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[0;34m%}%n%{\e[1;39m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} %{\e[0;34m%}%B[%b%{\e[0;34m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B] %b%{\e[0;34m%}$(git_prompt_info)%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} %b%{\e[0m%}
-%{\e[0;34m%}%B└─%B%{\e[1;32m%} %{\e[0m%}%b'
+%{\e[0;34m%}%B└─%B%{\e[1;32m%} %{\e[0m%}%b'
 #PS2=$' \e[0;34m%}%B%{\e[0m%}%b '
 
 #ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
