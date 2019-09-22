@@ -54,9 +54,9 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = "NotoSansMono Nerd Font:size=12:antialias=true;0"
-font-1 = "Unifont Nerd Font:style=Medium:fontformat=truetype:antialias=true:size=16;1"
-;font-2 = "Wuncon Siji:size=16;2"
+font-0 = "NotoMono-Regular:size=12:antialias=true;0"
+font-1 = "FontAwesome:size=12;1"
+font-2 = "DejaVu Sans:size=12;2"
 
 modules-left = i3 xwindow
 #modules-center =  
@@ -107,12 +107,8 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home
 
-;label-0 = 
-;label-1 = 
-
-label-mounted = %{F#aaa}%mountpoint%%{F-}: %percentage_used%%
+label-mounted =  %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 label-mounted-underline= #11cc77
@@ -227,7 +223,7 @@ format-underline = #11cc77
 format-overline = #11cc77
 ;format-padding = 2
 
-label =  %percentage:2%%
+label =  %percentage:2%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 5
@@ -257,7 +253,7 @@ ramp-coreload-7-foreground = #ff3b51
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #11cc77
 ;0a6cf5
@@ -316,7 +312,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #11cc77
 #meme!0a6cf5
 
-label = %date% %time%
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -325,7 +321,7 @@ format-volume = <label-volume>
 format-volume-underline = #11cc77
 ;0a6cf5
 ;<bar-volume>
-label-volume =  %percentage:2%%
+label-volume =  %percentage:2%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  0%

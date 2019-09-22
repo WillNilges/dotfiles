@@ -13,12 +13,13 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans Mono 10
+font pango:NotoMono 12
+
 
 default_border pixel 5
 hide_edge_borders none
-gaps inner 10
-gaps outer 5
+#gaps inner 10
+#gaps outer 5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -70,9 +71,9 @@ bindsym $mod+Shift+q kill
 
 # Rofi shit. Run programs and switch windows.
 #bindsym $mod+z exec rofi -show drun
-bindsym $mod+z exec rofi -font "Noto Sans Mono 18" -theme wilnil-shamrock -show drun # Commands
-bindsym $mod+x exec rofi -font "Noto Sans Mono 18" -theme wilnil-shamrock -show run # Applications
-bindsym $mod+Tab exec rofi -font "Noto Sans Mono 18" -theme wilnil-shamrock -show window
+bindsym $mod+z exec rofi -font "NotoMono 18" -show drun # Commands
+bindsym $mod+x exec rofi -font "NotoMono 18" -show run # Applications
+bindsym $mod+Tab exec rofi -font "NotoMono 18" -show window
 
 # start ranger (a file manager) <BROKEN>
 #bindsym $mod+f exec ranger
@@ -97,7 +98,7 @@ exec --no-startup-id xss-lock -n "i3-nagbar -t warning -m 'Screen Locking...'"  
 bindsym $mod+Shift+w exec firefox
 
 # start file manager
-bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+f exec nautilus
 
 # arandr to control monitor
 bindsym $mod+Shift+d exec arandr
