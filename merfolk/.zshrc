@@ -25,6 +25,7 @@ alias py3="python3"
 alias py2="python2"
 alias bcl="bc -l"
 alias allow="chmod +x "
+alias fgui="nautilus ."
 
 function letme () {
     chmod +x "$@"
