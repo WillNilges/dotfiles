@@ -4,6 +4,7 @@
 
 autoload -Uz vcs_info
 
+See this guide for how to do colors: https://misc.flogisoft.com/bash/tip_colors_and_formatting
 # green sheen
 eval my_green='$FG[084]'
 eval drk_green='$FG[078]'
