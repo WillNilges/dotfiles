@@ -119,6 +119,12 @@ alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
 alias datepls="date -Iseconds --utc"
 alias vpn="barracudavpn"
 
-function boxssh () {
-ssh root@10.10.$1
+default_boxssh_subnet=1
+function bosh () {
+    if [[ ! $1 == *"."* ]];
+    then
+        ssh root@10.10.$default_boxssh_subnet.$1
+    else
+        ssh root@10.10.$1
+    fi
 }
