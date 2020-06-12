@@ -98,26 +98,27 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+alias ezshrc="nvim ~/.zshrc"
+alias ethemes="nvim ~/.oh-my-zsh/custom/themes
 alias vi="nvim"
 alias vim="nvim"
-alias sl="echo TYPE \'ls\' NEXT TIME && ls"
+alias sl="ls"
 alias py="python3"
 alias py3="python3"
 alias py2="python2"
 alias bcl="bc -l"
+alias clc="bc -l"
 alias allow="chmod +x "
 alias fgui="nautilus ."
+alias mtpt="/media/wnilges"
+alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
+alias datepls="date -Iseconds --utc"
+alias vpn="barracudavpn"
 
 function letme () {
     chmod +x "$@"
     ./$@
 }
-
-alias mtpt="/media/wnilges"
-alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
-alias datepls="date -Iseconds --utc"
-alias vpn="barracudavpn"
 
 function expect_ssh () {
 expect ~/.exp $2 ssh $1
