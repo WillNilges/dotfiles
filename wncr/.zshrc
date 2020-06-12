@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ezshrc="nvim ~/.zshrc"
-alias ethemes="nvim ~/.oh-my-zsh/custom/themes
+alias ethemes="nvim ~/.oh-my-zsh/custom/themes"
 alias vi="nvim"
 alias vim="nvim"
 alias sl="ls"
