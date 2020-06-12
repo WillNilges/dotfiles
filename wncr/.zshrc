@@ -119,12 +119,48 @@ alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
 alias datepls="date -Iseconds --utc"
 alias vpn="barracudavpn"
 
+function expect_ssh () {
+expect ~/.exp $2 ssh $1
+##!/usr/bin/expect
+#
+#set timeout 20
+#
+#set cmd [lrange $argv 1 end]
+#set password [lindex $argv 0]
+#
+#eval spawn $cmd
+#expect "password:"
+#send "$2\r";
+#interact
+#exit
+}
+. ~/.password_file.conf
 default_boxssh_subnet=1
 function bosh () {
+    if [ -z "$2" ];
+    then
+        func_password=$bosh_password
+    else
+        func_password=$2
+    fi
     if [[ ! $1 == *"."* ]];
     then
-        ssh root@10.10.$default_boxssh_subnet.$1
+        #ssh root@10.10.$default_boxssh_subnet.$1
+        expect_ssh root@10.10.$default_boxssh_subnet.$1 $func_password
     else
-        ssh root@10.10.$1
+        #ssh root@10.10.$1
+        expect_ssh root@10.10.$default_boxssh_subnet.$1 $func_password
+    fi
+}
+
+function ucsh () {
+    func_password=$uc_password
+    if [[ ! $1 == *"."* ]];
+    then
+        #ssh root@10.10.$default_boxssh_subnet.$1
+        expect_ssh councilrock@10.10.$default_boxssh_subnet.$1 $func_password
+    else
+        #ssh root@10.10.$1
+        expect_ssh councilrock@10.10.$default_boxssh_subnet.$1 $func_password
     fi
 }
