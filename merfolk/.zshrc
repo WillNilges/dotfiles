@@ -19,13 +19,16 @@ source $ZSH/oh-my-zsh.sh
 
 alias vi="nvim"
 alias vim="nvim"
-alias sl="echo TYPE \'ls\' NEXT TIME, MORON! && ls"
+alias sl="echo \(correcting to \'ls\'\) && ls"
 alias py="python3"
 alias py3="python3"
 alias py2="python2"
 alias bcl="bc -l"
 alias allow="chmod +x "
 alias fgui="nautilus ."
+alias school="cd ~/Documents/2-2-RIT/"
+alias eixt="echo \(correcting to \'exit\'\) && exit"
+alias bsdfuck="echo 'The command to get video out is: set kern.vty=\"sc\"' && echo 'The command to enable networking is: ifconfig em0 inet 10.0.0.19 && dhclient em0"
 
 function letme () {
     chmod +x "$@"
