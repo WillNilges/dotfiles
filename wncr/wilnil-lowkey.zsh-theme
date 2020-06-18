@@ -4,10 +4,9 @@
 
 autoload -Uz vcs_info
 
-#See this guide for how to do colors: https://misc.flogisoft.com/bash/tip_colors_and_formatting
 # green sheen
-eval my_green='$FG[084]'
-eval drk_green='$FG[078]'
+eval my_green='$FG[129]'
+eval drk_green='$FG[090]'
 eval blue_tm='$FG[032]'
 
 # git theming
@@ -26,8 +25,9 @@ ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
 WHOAMI='%{$blue_tm%}%B[%b%{\e[0m%}%{\e[1;39m%}%b%n@%m%{$blue_tm%}%B]'
-PROMPT=$'%b%{\e[0m%}%b%{$my_green%}%B[%b%{\e[1;37m%}%~%{$my_green%}%B]%b%{\e[0m%} %b%{\e[0m%}$(git_prompt_info)\n%{$my_green%}%B$ %{\e[0m%}%b'
+PROMPT=$'%b%{\e[0m%} %b%{$my_green%}%B[%b%{\e[1;37m%}%~%{$my_green%}%B]%b%{\e[0m%} %b%{\e[0m%}$(git_prompt_info)%{$my_green%}%B\n $ %{\e[0m%}%b'
 
 #ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+
 
 
