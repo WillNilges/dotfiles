@@ -80,11 +80,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -100,8 +100,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias ezshrc="nvim ~/.zshrc"
 alias ethemes="nvim ~/.oh-my-zsh/custom/themes"
-alias vi="nvim"
-alias vim="nvim"
+#alias vi="nvim"
+#alias vim="nvim"
+alias nv="nvim"
 alias sl="ls"
 alias py="python3"
 alias py3="python3"
@@ -158,10 +159,12 @@ function ucsh () {
     func_password=$uc_password
     if [[ ! $1 == *"."* ]];
     then
-        #ssh root@10.10.$default_boxssh_subnet.$1
-        expect_ssh councilrock@10.10.$default_boxssh_subnet.$1 $func_password
+        ssh councilrock@10.10.$default_boxssh_subnet.$1
+        #expect_ssh councilrock@10.10.$default_boxssh_subnet.$1 $func_password
     else
-        #ssh root@10.10.$1
-        expect_ssh councilrock@10.10.$default_boxssh_subnet.$1 $func_password
+        ssh councilrock@10.10.$1
+        #expect_ssh councilrock@10.10.$default_boxssh_subnet.$1 $func_password
     fi
 }
+
+alias ucesh="ssh councilrock@10.0.3.1"

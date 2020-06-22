@@ -25,7 +25,7 @@ ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
 WHOAMI='%{$blue_tm%}%B[%b%{\e[0m%}%{\e[1;39m%}%b%n@%m%{$blue_tm%}%B]'
-PROMPT=$'%b%{\e[0m%} %b%{$my_green%}%B[%b%{\e[1;37m%}%~%{$my_green%}%B]%b%{\e[0m%} %b%{\e[0m%}$(git_prompt_info)%{$my_green%}%B\n $ %{\e[0m%}%b'
+PROMPT=$'%b%{\e[0m%}%b%{$my_green%}%B[%b%{\e[1;37m%}%~%{$my_green%}%B]%b%{\e[0m%} %b%{\e[0m%}$(git_prompt_info)%{$my_green%}%B\n$ %{\e[0m%}%b'
 
 #ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 
