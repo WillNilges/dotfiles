@@ -115,6 +115,11 @@ alias mtpt="/media/wnilges"
 alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
 alias datepls="date -Iseconds --utc"
 alias vpn="barracudavpn"
+alias xit="exit"
+
+lxattach () {
+    lxc exec $1 -- /bin/bash
+}
 
 function letme () {
     chmod +x "$@"
@@ -147,11 +152,11 @@ function bosh () {
     fi
     if [[ ! $1 == *"."* ]];
     then
-        #ssh root@10.10.$default_boxssh_subnet.$1
-        expect_ssh root@10.10.$default_boxssh_subnet.$1 $func_password
+        ssh root@10.10.$default_boxssh_subnet.$1
+        #expect_ssh root@10.10.$default_boxssh_subnet.$1 $func_password
     else
-        #ssh root@10.10.$1
-        expect_ssh root@10.10.$default_boxssh_subnet.$1 $func_password
+        ssh root@10.10.$1
+        #expect_ssh root@10.10.$default_boxssh_subnet.$1 $func_password
     fi
 }
 
