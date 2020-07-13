@@ -116,6 +116,7 @@ alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
 alias datepls="date -Iseconds --utc"
 alias vpn="barracudavpn"
 alias xit="exit"
+alias cls="clear"
 
 lxattach () {
     lxc exec $1 -- /bin/bash
