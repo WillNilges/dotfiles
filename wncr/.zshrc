@@ -33,11 +33,15 @@ alias vpn="barracudavpn"
 alias xit="exit"
 alias cls="clear"
 alias 'lx?'="lxc list"
+alias mssh=bosh
+alias pubkey="cat ~/.ssh/id_rsa.pub"
+alias myprivates="cat ~/.ssh/id_rsa"
+alias allmykeys="cat ~/.ssh/id_rsa && cat ~/.ssh/id_rsa.pub"
 
 lxattach () {
-    lxc exec $1 -- /bin/bash \
-    || echo 'Starting container...' && lxc start $1 && lxc exec $1 -- /bin/bash \
-    || echo "Huh. It's still not starting. Here's the available containers: " && lxc list
+    lxc exec $1 -- /bin/bash && return 0\
+    || echo 'Starting container...' && lxc start $1 && lxc exec $1 -- /bin/bash && return 0\
+    || (echo "Huh. It's still not starting. Here's the available containers: "; lxc list)
 }
 
 function letme () {
@@ -51,21 +55,11 @@ app=$1; install-peerdeps $app || npm i $app
 
 function expect_ssh () {
 expect ~/.exp $2 ssh $1
-##!/usr/bin/expect
-#
-#set timeout 20
-#
-#set cmd [lrange $argv 1 end]
-#set password [lindex $argv 0]
-#
-#eval spawn $cmd
-#expect "password:"
-#send "$2\r";
-#interact
-#exit
 }
+
 . ~/.password_file.conf
-default_boxssh_subnet=1
+default_boxssh_subnet=3
+bosh_password=
 function bosh () {
     if [ -z "$2" ];
     then
