@@ -55,3 +55,24 @@ function rpm_dni () {
     wget $1 -o rpm_dni_file.rpm
     sudo rpm -i rpm_dni_file.rpm
 }
+
+function getkey () {
+    key="ed25519"
+    type=".pub"
+    while test $# -gt 0; do
+        case "$1" in
+            --rsa)
+                key="rsa"
+                ;;
+            --ed25519)
+                key="ed25519"
+                ;;
+            --private || -p)
+                type=""
+                ;;
+        esac
+        shift
+    done
+    cat /home/wilnil/.ssh/id_$key$type
+
+}
