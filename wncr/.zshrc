@@ -30,7 +30,7 @@ alias fgui="nautilus ."
 alias mtpt="/media/wnilges"
 alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
 alias datepls="date -Iseconds --utc"
-alias vpn="barracudavpn"
+alias vpn="xterm barracudavpn"
 alias xit="exit"
 alias exi="exit"
 alias ext="exit"
@@ -46,11 +46,20 @@ alias tftpstart="sudo /etc/init.d/tftpd-hpa start && sudo ufw allow tftp"
 alias tftpstop="sudo /etc/init.d/tftpd-hpa stop && sudo ufw deny tftp"
 alias testpi="ssh pi@10.10.3.15" # This may change from time to time.
 alias fgfi="./run.sh || ./do.sh || ./test.sh" #Fuckin' go for it!
+alias iaq=". /opt/poky/2.3.4/environment-setup-cortexa9hf-neon-poky-linux-gnueabi && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh"
+alias lumenpi="ssh ubuntu@10.10.2.116" # Subject to change.
 
-del_id() {
+# Emojis?
+alias shrug="clear && echo '¯\_(ツ)_/¯'"
+
+del_id() { #Daniel
     ssh-keygen -f ~/.ssh/known_hosts -R 10.10.3.$1
     echo "Just checking ;)"
     ssh-keygen -f ~/.ssh/known_hosts -R $1
+}
+
+ssh-rm () { #The cooler Daniel
+  ssh-keygen -f "/home/wnilges/.ssh/known_hosts" -R "$1"
 }
 
 lxattach () {
@@ -112,4 +121,16 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 blkmv () {
 for filename in *$1; do echo mv \"$filename\" \"${filename//$1/$2}\"; done | /bin/bash
+}
+
+aliases () {
+    cat "$HOME/.zshrc" | grep alias
+}
+
+serial () {
+    sudo minicom -D /dev/tty$1
+}
+
+gogit () {
+git clone git@github.com:$1.git $2
 }
