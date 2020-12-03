@@ -37,6 +37,10 @@ alias pubkey="cat ~/.ssh/id_rsa.pub"
 alias myprivates="cat ~/.ssh/id_rsa"
 alias allmykeys="cat ~/.ssh/id_rsa && cat ~/.ssh/id_rsa.pub"
 
+sshdelid () {
+    ssh-keygen -f "/home/wilnil/.ssh/known_hosts" -R $1
+}
+
 lxattach () {
     lxc exec $1 -- /bin/bash && return 0\
     || echo 'Starting container...' && lxc start $1 && lxc exec $1 -- /bin/bash && return 0\
