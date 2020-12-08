@@ -15,6 +15,8 @@ source $ZSH/oh-my-zsh.sh
    export EDITOR='nvim'
  fi
 
+PATH=/home/wnilges/go/bin:/home/wnilges/bin:$PATH
+
 alias ezshrc="nvim ~/.zshrc"
 alias ethemes="nvim ~/.oh-my-zsh/custom/themes"
 alias vim="nvim"
@@ -48,6 +50,7 @@ alias testpi="ssh pi@10.10.3.15" # This may change from time to time.
 alias fgfi="./run.sh || ./do.sh || ./test.sh" #Fuckin' go for it!
 alias iaq=". /opt/poky/2.3.4/environment-setup-cortexa9hf-neon-poky-linux-gnueabi && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh"
 alias lumenpi="ssh ubuntu@10.10.2.116" # Subject to change.
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
 
 # Emojis?
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
