@@ -51,6 +51,7 @@ alias fgfi="./run.sh || ./do.sh || ./test.sh" #Fuckin' go for it!
 alias iaq=". /opt/poky/2.3.4/environment-setup-cortexa9hf-neon-poky-linux-gnueabi && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh"
 alias lumenpi="ssh ubuntu@10.10.2.116" # Subject to change.
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
+alias akcfg='export KUBECONFIG=/home/wnilges/Documents/vista/thingsboard-ce-k8s/aws/eks/kubeconfig_k8s-vista-test'
 
 # Emojis?
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
