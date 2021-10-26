@@ -201,6 +201,23 @@
        <command>playerctl previous</command>
      </action>
    </keybind>
+    <!-- Bindings for Rofi -->
+   <keybind key="W-z">
+    <action name="Execute">
+       <command>rofi -show drun</command>
+     </action>
+   </keybind>
+   <keybind key="W-x">
+    <action name="Execute">
+       <command>rofi -show run</command>
+     </action>
+   </keybind>
+
+   <keybind key="W-Tab">
+    <action name="Execute">
+       <command>rofi -show window</command>
+     </action>
+   </keybind>
 
     <!-- Alt Bindings for Media -->
    <keybind key="W-slash">
