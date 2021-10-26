@@ -180,6 +180,44 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <!-- Media Keys -->
+   <keybind key="XF86AudioPlay">
+     <action name="Execute">
+       <command>playerctl play-pause</command>
+     </action>
+   </keybind>
+   <keybind key="XF86AudioStop">
+     <action name="Execute">
+       <command>playerctl stop</command>
+     </action>
+   </keybind>
+   <keybind key="XF86AudioNext">
+     <action name="Execute">
+       <command>playerctl next</command>
+     </action>
+   </keybind>
+   <keybind key="XF86AudioPrev">
+     <action name="Execute">
+       <command>playerctl previous</command>
+     </action>
+   </keybind>
+
+    <!-- Alt Bindings for Media -->
+   <keybind key="W-slash">
+    <action name="Execute">
+       <command>playerctl play-pause</command>
+     </action>
+   </keybind>
+   <keybind key="W-period">
+     <action name="Execute">
+       <command>playerctl next</command>
+     </action>
+   </keybind>
+   <keybind key="W-comma">
+     <action name="Execute">
+       <command>playerctl previous</command>
+     </action>
+   </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -266,27 +304,25 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-
-
-<keybind key="W-Left">
-  <action name="UnmaximizeFull"/>
-  <action name="MoveResizeTo">
-    <width>50%</width>
-    <height>100%</height>
-    <x>0%</x>
-    <y>0%</y>
-  </action>
-</keybind>
-<keybind key="W-Right">
-  <action name="UnmaximizeFull"/>
-  <action name="MoveResizeTo">
-    <width>50%</width>
-    <height>100%</height>
-    <x>50%</x>
-    <y>0%</y>
-  </action>
-</keybind>
-<!--
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>100%</height>
+        <x>0%</x>
+        <y>0%</y>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>100%</height>
+        <x>50%</x>
+        <y>0%</y>
+      </action>
+    </keybind>
+    <!--
 <keybind key="A-x">
   <action name="UnmaximizeFull"/>
   <action name="MoveResizeTo">
@@ -305,49 +341,48 @@
     <y>0%</y>
   </action>
 </keybind>-->
-<keybind key="W-o">
-  <action name="UnmaximizeFull"/>
-  <action name="MoveResizeTo">
-    <width>50%</width>
-    <height>50%</height>
-    <x>0%</x>
-    <y>0%</y>
-  </action>
-</keybind>
-<keybind key="W-p">
-  <action name="UnmaximizeFull"/>
-  <action name="MoveResizeTo">
-    <width>50%</width>
-    <height>50%</height>
-    <x>50%</x>
-    <y>0%</y>
-  </action>
-</keybind>
-<keybind key="W-k">
-  <action name="UnmaximizeFull"/>
-  <action name="MoveResizeTo">
-    <width>50%</width>
-    <height>50%</height>
-    <x>0%</x>
-    <y>50%</y>
-  </action>
-</keybind>
-<keybind key="W-l">
-  <action name="UnmaximizeFull"/>
-  <action name="MoveResizeTo">
-    <width>50%</width>
-    <height>50%</height>
-    <x>50%</x>
-    <y>50%</y>
-  </action>
-</keybind>
-<keybind key="W-Up">
-  <action name="Maximize"/>
-</keybind>
-<keybind key="W-Down">
-  <action name="Iconify"/>
-</keybind>
-
+    <keybind key="W-o">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>50%</height>
+        <x>0%</x>
+        <y>0%</y>
+      </action>
+    </keybind>
+    <keybind key="W-p">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>50%</height>
+        <x>50%</x>
+        <y>0%</y>
+      </action>
+    </keybind>
+    <keybind key="W-k">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>50%</height>
+        <x>0%</x>
+        <y>50%</y>
+      </action>
+    </keybind>
+    <keybind key="W-l">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>50%</height>
+        <x>50%</x>
+        <y>50%</y>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="Maximize"/>
+    </keybind>
+    <keybind key="W-h">
+      <action name="Iconify"/>
+    </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
