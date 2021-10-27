@@ -213,8 +213,13 @@
       </action>
     </keybind>
     <keybind key="W-Tab">
-      <action name="Execute">
+      <action name="execute">
         <command>rofi -show window</command>
+      </action>
+    </keybind>
+    <keybind key="W-grave">
+      <action name="execute">
+        <command>rofi -show windowcd</command>
       </action>
     </keybind>
     <!-- Alt Bindings for Media -->
