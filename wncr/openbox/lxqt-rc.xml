@@ -25,12 +25,12 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Active</monitor>
+    <monitor>Mouse</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
@@ -181,68 +181,66 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Media Keys -->
-   <keybind key="XF86AudioPlay">
-     <action name="Execute">
-       <command>playerctl play-pause</command>
-     </action>
-   </keybind>
-   <keybind key="XF86AudioStop">
-     <action name="Execute">
-       <command>playerctl stop</command>
-     </action>
-   </keybind>
-   <keybind key="XF86AudioNext">
-     <action name="Execute">
-       <command>playerctl next</command>
-     </action>
-   </keybind>
-   <keybind key="XF86AudioPrev">
-     <action name="Execute">
-       <command>playerctl previous</command>
-     </action>
-   </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
     <!-- Bindings for Rofi -->
-   <keybind key="W-z">
-    <action name="Execute">
-       <command>rofi -show drun</command>
-     </action>
-   </keybind>
-   <keybind key="W-x">
-    <action name="Execute">
-       <command>rofi -show run</command>
-     </action>
-   </keybind>
-
-   <keybind key="W-Tab">
-    <action name="Execute">
-       <command>rofi -show window</command>
-     </action>
-   </keybind>
-
+    <keybind key="W-z">
+      <action name="Execute">
+        <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <command>rofi -show run</command>
+      </action>
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="Execute">
+        <command>rofi -show window</command>
+      </action>
+    </keybind>
     <!-- Alt Bindings for Media -->
-   <keybind key="W-slash">
-    <action name="Execute">
-       <command>playerctl play-pause</command>
-     </action>
-   </keybind>
-   <keybind key="W-period">
-     <action name="Execute">
-       <command>playerctl next</command>
-     </action>
-   </keybind>
-   <keybind key="W-comma">
-     <action name="Execute">
-       <command>playerctl previous</command>
-     </action>
-   </keybind>
+    <keybind key="W-slash">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="W-period">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="W-comma">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
+    <keybind key="W-Prior">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-Next">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -260,13 +258,13 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Left">
+    <keybind key="S-W-Prior">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="S-W-Next">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
