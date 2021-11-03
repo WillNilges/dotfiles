@@ -10,14 +10,14 @@
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>no</followMouse>
+    <followMouse>yes</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
-    <focusLast>yes</focusLast>
+    <focusLast>no</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
        under the mouse pointer. when followMouse is enabled -->
     <underMouse>no</underMouse>
     <!-- move focus under the mouse, even when the mouse is not moving -->
-    <focusDelay>200</focusDelay>
+    <focusDelay>50</focusDelay>
     <!-- when followMouse is enabled, the mouse must be inside the window for
        this many milliseconds (1000 = 1 sec) before moving focus to it -->
     <raiseOnFocus>no</raiseOnFocus>
@@ -30,7 +30,7 @@
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Mouse</monitor>
+    <monitor>Any</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
@@ -180,6 +180,12 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <!-- Xrandr Keys -->
+    <keybind key="C-A-W-0">
+        <action name="Execute">
+            <command>xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output HDMI-2 --off --output DP-1-1 --off --output DP-1-2 --off --output DP-1-3 --off</command>
+        </action>
+    </keybind>
     <!-- Media Keys -->
     <keybind key="XF86AudioPlay">
       <action name="Execute">
