@@ -31,7 +31,7 @@ alias fgui="nautilus ."
 alias mtpt="/media/wnilges"
 alias img2tftp="sudo cp councilrock-telig.img.gz /var/lib/tftpboot"
 alias datepls="date -Iseconds --utc"
-alias vpn="xterm barracudavpn"
+alias vpn="export TERM=xterm; barracudavpn"
 alias cls="clear"
 alias 'lx?'="lxc list"
 alias mssh=bosh
@@ -43,12 +43,14 @@ alias tftpstart="sudo /etc/init.d/tftpd-hpa start && sudo ufw allow tftp"
 alias tftpstop="sudo /etc/init.d/tftpd-hpa stop && sudo ufw deny tftp"
 alias testpi="ssh pi@10.10.3.15" # This may change from time to time.
 alias fgfi="./run.sh || ./do.sh || ./test.sh" #Fuckin' go for it!
-#alias iaq=". /opt/poky/2.3.4/environment-setup-cortexa9hf-neon-poky-linux-gnueabi && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh"
+alias qt-old=". /opt/poky/2.3.4/environment-setup-cortexa9hf-neon-poky-linux-gnueabi && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh &"
 alias lumenpi="ssh ubuntu@10.10.2.116" # Subject to change.
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
-alias akcfg='export KUBECONFIG=/home/wnilges/Documents/vista/thingsboard-ce-k8s/aws/eks/kubeconfig_k8s-vista-test'
-alias qt=". /opt/inversol-lumen2/3.1/environment-setup-aarch64-fslc-linux && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh"
-alias mqtte='/home/wnilges/.local/share/MQTT-Explorer-0.3.5.AppImage'
+alias k="kubectl"
+alias qt=". /opt/inversol-lumen2/3.1/environment-setup-aarch64-fslc-linux && /home/wnilges/Qt/Tools/QtCreator/bin/qtcreator.sh &"
+alias mqtte='/home/wnilges/.local/share/MQTT-Explorer-0.3.5.AppImage &'
+alias git-branch-stale='git for-each-ref --sort=committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
+alias a-dog='git log --all --decorate --oneline --graph'
 
 # Fuck, Typos.
 alias scd="cd" 
@@ -60,15 +62,20 @@ alias exu="exit"
 
 # Emojis?
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
+alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
+alias bear="clear && echo 'ʕ•ᴥ•ʔ'"
+alias ritstudent="clear && echo '┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴'"
 
-del_id() { #Daniel
-    ssh-keygen -f ~/.ssh/known_hosts -R 10.10.3.$1
-    echo "Just checking ;)"
-    ssh-keygen -f ~/.ssh/known_hosts -R $1
+# Recursively find and replace inside a directory.
+find-replace() {
+    search_for=$1
+    inside=$2
+    replace_with=$3
+    grep -rl "$search_for" $inside | xargs sed -i 's/'$search_for'/'$replace_with'/g'
 }
 
-ssh-rm () { #The cooler Daniel
-  ssh-keygen -f "/home/wnilges/.ssh/known_hosts" -R "$1"
+ssh-forget () { #The cooler Daniel
+  ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R "$1"
 }
 
 lxattach () {
@@ -143,3 +150,5 @@ serial () {
 gogit () {
 git clone git@github.com:$1.git $2
 }
+
+#export KUBECONFIG=~/Documents/vista-base-test/kube_config_cluster.yml

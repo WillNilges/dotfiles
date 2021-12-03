@@ -1,0 +1,119 @@
+[/]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'c43b0904-0c53-4a9d-980d-86907f2e2846', '300283be-8263-4207-aded-f728af5f240b', 'd00b9ec9-17c0-4bb4-96bc-b6ccca3100ec', 'c8713793-c279-44dd-a042-2d0248cc3ad2', '2c36e199-588e-4fc7-8c16-c7a415c5d08f', '181574cc-6f6e-4f11-a6f6-560e839637e4', '1e0e4d81-eb09-496b-9944-81c5c1a61dbf', '9695d208-b665-4a15-95d7-bf834759f5d7', '82c3fba8-d31b-4bb2-bfae-64bbfba2f5f1', 'cec722b1-e8f7-4904-bef1-009262982da2']
+
+[:181574cc-6f6e-4f11-a6f6-560e839637e4]
+audible-bell=false
+background-color='rgb(0,55,69)'
+background-transparency-percent=20
+foreground-color='rgb(178,247,255)'
+palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(138,128,196)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(77,46,255)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollbar-policy='never'
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Deapsee'
+
+[:1e0e4d81-eb09-496b-9944-81c5c1a61dbf]
+audible-bell=false
+background-color='rgb(0,0,0)'
+font='Noto Mono 11'
+foreground-color='rgb(255,105,105)'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Rosy'
+
+[:2c36e199-588e-4fc7-8c16-c7a415c5d08f]
+audible-bell=false
+background-color='rgb(48,0,0)'
+font='Noto Mono 11'
+foreground-color='rgb(255,213,213)'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Bloodied'
+
+[:300283be-8263-4207-aded-f728af5f240b]
+audible-bell=false
+font='Noto Mono 11'
+foreground-color='rgb(236,146,11)'
+palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(76,152,249)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(147,199,255)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Amber'
+
+[:82c3fba8-d31b-4bb2-bfae-64bbfba2f5f1]
+audible-bell=false
+background-color='rgb(43,43,43)'
+bold-is-bright=false
+cursor-blink-mode='on'
+cursor-shape='block'
+font='Noto Mono 11'
+foreground-color='rgb(189,238,255)'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Ghastly'
+
+[:9695d208-b665-4a15-95d7-bf834759f5d7]
+audible-bell=false
+background-color='rgb(0,0,0)'
+font='Noto Mono 11'
+foreground-color='rgb(105,255,105)'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Mint Sauce'
+
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+background-color='rgb(17,17,17)'
+bold-is-bright=false
+cursor-blink-mode='on'
+cursor-shape='block'
+font='Noto Mono 11'
+foreground-color='rgb(255,255,255)'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Coal'
+
+[:c43b0904-0c53-4a9d-980d-86907f2e2846]
+audible-bell=false
+background-color='rgb(0,0,0)'
+font='Noto Mono 11'
+foreground-color='rgb(0,255,0)'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Green'
+
+[:c8713793-c279-44dd-a042-2d0248cc3ad2]
+audible-bell=false
+background-color='rgb(0,18,31)'
+font='Noto Mono 11'
+foreground-color='rgb(238,232,179)'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Cobalt'
+
+[:cec722b1-e8f7-4904-bef1-009262982da2]
+background-color='rgb(44,0,30)'
+foreground-color='rgb(255,255,255)'
+scrollbar-policy='never'
+use-theme-colors=false
+visible-name='Ubongoes'
+
+[:d00b9ec9-17c0-4bb4-96bc-b6ccca3100ec]
+audible-bell=false
+background-color='rgb(255,255,221)'
+font='Noto Mono 11'
+foreground-color='rgb(27,27,0)'
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+visible-name='Beige'
