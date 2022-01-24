@@ -27,19 +27,18 @@ alias py2="python2"
 alias bcl="bc -l"
 alias clc="bc -l"
 alias allow="chmod +x "
-alias fgui="nautilus ."
+alias fgui="nautilus .&"
 alias mtpt="/media/wilnil"
 alias datepls="date -Iseconds --utc"
 alias xit="exit"
 alias cls="clear"
 alias 'lx?'="lxc list"
-alias pubkey="cat ~/.ssh/id_rsa.pub"
-alias myprivates="cat ~/.ssh/id_rsa"
-alias allmykeys="cat ~/.ssh/id_rsa && cat ~/.ssh/id_rsa.pub"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
 
-sshdelid () {
-    ssh-keygen -f "/home/wilnil/.ssh/known_hosts" -R $1
-}
+alias shrug="clear && echo '¯\_(ツ)_/¯'"
+alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
+alias minecraft="/home/wilnil/.local/bin/Minecraft/minecraft-launcher/minecraft-launcher"
+alias agent='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519'
 
 lxattach () {
     lxc exec $1 -- /bin/bash && return 0\
@@ -80,3 +79,8 @@ function getkey () {
     cat /home/wilnil/.ssh/id_$key$type
 
 }
+
+gogit () {
+    git clone git@github.com:$1.git $2
+}
+
