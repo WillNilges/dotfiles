@@ -1,2 +1,1 @@
-# dotfiles
-Have some rice.
+`source-file ~/.tmux.conf`
