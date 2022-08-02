@@ -2,8 +2,8 @@ set relativenumber
 "set cursorline
 syntax on
 "set listchars="    ":\|\ 
-set list
-"colorscheme industry
+"set list
+colorscheme slate
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 "highlight cursorline ctermbg=17 cterm=none
