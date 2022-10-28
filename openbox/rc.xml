@@ -178,6 +178,70 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <!-- Media Keys -->
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-ForwardSlash">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="W-.">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="W-,">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
+
+    <!-- Bindings for Rofi -->
+    <keybind key="W-space">
+      <action name="Execute">
+        <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <command>rofi -show run</command>
+      </action>
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="execute">
+        <command>rofi -show window</command>
+      </action>
+    </keybind>
+    <keybind key="W-grave">
+      <action name="execute">
+        <command>rofi -show windowcd</command>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="W-Prior">
       <action name="GoToDesktop">
@@ -287,6 +351,7 @@
       <action name="Iconify"/>
     </keybind>
     <!-- Keybindings for window switching -->
+    <!--
     <keybind key="W-Tab">
       <action name="NextWindow">
         <finalactions>
@@ -305,6 +370,7 @@
         </finalactions>
       </action>
     </keybind>
+    -->
     <keybind key="C-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
