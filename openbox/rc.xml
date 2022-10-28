@@ -200,7 +200,7 @@
       </action>
     </keybind>
 
-    <keybind key="W-ForwardSlash">
+    <keybind key="W-slash">
       <action name="Execute">
         <command>playerctl play-pause</command>
       </action>
@@ -210,12 +210,12 @@
         <command>playerctl stop</command>
       </action>
     </keybind>
-    <keybind key="W-.">
+    <keybind key="W-period">
       <action name="Execute">
         <command>playerctl next</command>
       </action>
     </keybind>
-    <keybind key="W-,">
+    <keybind key="W-comma">
       <action name="Execute">
         <command>playerctl previous</command>
       </action>
