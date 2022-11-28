@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Rofi color theme
+
+   Willard wants blue
+
+   File: cobalt.rasi
+   Desc: Blue theme for rofi 
+   Author: Willard <wdn5796@rit.edu>
+   Source: https://github.com/willnilges/dotfiles
+   Modified: Mon Feb 12 2018 06:04:26 PST -0800
+   ========================================================================== */
+
+* {
+    /* Theme settings */
+    highlight: bold italic;
+    scrollbar: true;
+
+    /* Gruvbox dark colors */
+    chom-dark-bg0-hard:     #1d2021;
+    chom-dark-bg0:          #282828;
+    chom-dark-bg2:          #504945;
+    chom-dark-fg0:          #fbf1c7;
+    chom-dark-fg1:          #ebdbb2;
+    chom-dark-red-dark:     #cc241d;
+    chom-dark-red-light:    #fb4934;
+    chom-dark-blue-dark:    #5b829e;
+    chom-dark-blue-light:   #268bd2;
+    chom-dark-gray:         #a89984;
+
+    /* Theme colors */
+    background:                  @chom-dark-bg0-hard;
+    background-color:            @background;
+    foreground:                  @chom-dark-fg1;
+    border-color:                @chom-dark-gray;
+    separatorcolor:              @border-color;
+    scrollbar-handle:            @border-color;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @chom-dark-bg0;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @chom-dark-bg2;
+    selected-normal-foreground:  @chom-dark-fg0;
+
+    active-background:           @chom-dark-blue-dark;
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @chom-dark-blue-light;
+    selected-active-foreground:  @active-foreground;
+
+    urgent-background:           @chom-dark-red-dark;
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @chom-dark-red-light;
+    selected-urgent-foreground:  @urgent-foreground;
+}
+
+@import "gruvbox-common.rasi"
+
