@@ -199,7 +199,6 @@
         <command>playerctl previous</command>
       </action>
     </keybind>
-
     <keybind key="W-slash">
       <action name="Execute">
         <command>playerctl play-pause</command>
@@ -220,7 +219,6 @@
         <command>playerctl previous</command>
       </action>
     </keybind>
-
     <!-- Bindings for Rofi -->
     <keybind key="W-space">
       <action name="Execute">
@@ -315,13 +313,21 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
+    <keybind key="W-bracketleft">        # UpperHalfLeftScreen
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo"><x>0</x><y>0</y><height>50%</height><width>50%</width></action>
+    </keybind>
+    <keybind key="W-bracketright">       # UpperHalfRightScreen
+        <action name="UnmaximizeFull"/>
+        <action name="MoveResizeTo"><x>-0</x><y>0</y><height>50%</height><width>50%</width></action>
+    </keybind>
     <keybind key="W-Left">        # HalfLeftScreen
         <action name="UnmaximizeFull"/>
-        <action name="MoveResizeTo"><x>0</x><y>0</y><height>97%</height><width>50%</width></action>
+        <action name="MoveResizeTo"><x>0</x><y>0</y><height>100%</height><width>50%</width></action>
     </keybind>
     <keybind key="W-Right">       # HalfRightScreen
         <action name="UnmaximizeFull"/>
-        <action name="MoveResizeTo"><x>-0</x><y>0</y><height>97%</height><width>50%</width></action>
+        <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>50%</width></action>
     </keybind>
     <keybind key="W-Up">          # HalfUpperScreen
         <action name="UnmaximizeFull"/>
