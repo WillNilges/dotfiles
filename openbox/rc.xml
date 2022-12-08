@@ -240,6 +240,37 @@
         <command>rofi -show windowcd</command>
       </action>
     </keybind>
+    <!-- Bindings for app launching -->
+    <keybind key="W-Return">
+      <action name="execute">
+        <command>alacritty</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-f">
+      <action name="execute">
+        <command>pcmanfm-qt</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-w">
+      <action name="execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="execute">
+        <command>speedcrunch</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-b">
+      <action name="execute">
+        <command>blueman-manager</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-a">
+      <action name="execute">
+        <command>pavucontrol-qt</command>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="W-Prior">
       <action name="GoToDesktop">
