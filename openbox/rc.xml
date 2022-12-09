@@ -271,6 +271,27 @@
         <command>pavucontrol-qt</command>
       </action>
     </keybind>
+    <!-- Screenshots -->
+    <keybind key="Print">
+      <action name="execute">
+        <command>screengrab</command>
+      </action>
+    </keybind>
+    <keybind key="C-Print">
+      <action name="execute">
+        <command>screengrab -r</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="execute">
+        <command>screengrab -a</command>
+      </action>
+    </keybind>
+    <keybind key="S-Print">
+      <action name="execute">
+        <command>screengrab -f</command>
+      </action>
+    </keybind>
     <!-- Lock Screen -->
     <keybind key="W-l">
       <action name="execute">
