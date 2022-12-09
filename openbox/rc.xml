@@ -271,6 +271,12 @@
         <command>pavucontrol-qt</command>
       </action>
     </keybind>
+    <!-- Lock Screen -->
+    <keybind key="W-l">
+      <action name="execute">
+        <command>xdg-screensaver lock</command>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="W-Prior">
       <action name="GoToDesktop">
