@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Onyx-black</name>
+    <name>Wblue</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -57,7 +57,7 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Noto Sans</name>
+      <name>IBM Plex Mono</name>
       <size>8</size>
       <!-- font size in points -->
       <weight>Bold</weight>
@@ -66,7 +66,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Noto Sans</name>
+      <name>IBM Plex Mono</name>
       <size>8</size>
       <!-- font size in points -->
       <weight>Bold</weight>
@@ -222,22 +222,22 @@
     <!-- Bindings for Rofi -->
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -font "IBM Plex Mono 12"</command>
       </action>
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>rofi -show run</command>
+        <command>rofi -show run -font "IBM Plex Mono 12"</command>
       </action>
     </keybind>
     <keybind key="W-Tab">
       <action name="execute">
-        <command>rofi -show window</command>
+        <command>rofi -show window -font "IBM Plex Mono 12"</command>
       </action>
     </keybind>
     <keybind key="W-grave">
       <action name="execute">
-        <command>rofi -show windowcd</command>
+        <command>rofi -show windowcd -font "IBM Plex Mono 12"</command>
       </action>
     </keybind>
     <!-- Bindings for app launching -->
