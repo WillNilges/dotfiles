@@ -34,7 +34,7 @@ alias xit="exit"
 alias cls="clear"
 alias 'lx?'="lxc list"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
-
+alias scratchypad='bash ~/Code/dotfiles/touchpad.sh'
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
 alias minecraft="/home/wilnil/.local/bin/Minecraft/minecraft-launcher/minecraft-launcher"
