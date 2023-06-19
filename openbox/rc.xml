@@ -271,6 +271,11 @@
         <command>pavucontrol-qt</command>
       </action>
     </keybind>
+    <keybind key="W-S-d">
+      <action name="execute">
+        <command>arandr</command>
+      </action>
+    </keybind>
     <keybind key="W-S-s">
       <action name="execute">
         <command>bash /home/wilnil/Code/dotfiles/touchpad.sh</command>

@@ -28,3 +28,4 @@ nnoremap <Down> :echo "Chom."<CR>
 vnoremap <Down> :<C-u>echo "Chom."<CR>
 inoremap <Down> <C-o>:echo "Chom."<CR>
 
+hi MatchParen cterm=none ctermbg=green ctermfg=blue

@@ -59,6 +59,19 @@ require('packer').startup(function(use)
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+  -- Unless you are still migrating, remove the deprecated commands from v1.x
+  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+      branch = "v2.x",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+      }
+    }
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then

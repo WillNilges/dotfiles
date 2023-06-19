@@ -84,3 +84,7 @@ gogit () {
     git clone git@github.com:$1.git $2
 }
 
+function cnf() {
+    chom=$(curl --silent https://command-not-found.com/$1 | grep pacman)
+    echo $chom | sed -e 's/<[^>]*>//g'
+}
