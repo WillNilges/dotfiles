@@ -1,4 +1,5 @@
 [ActivityManager][Global Shortcuts]
+switch-to-activity-05695769-281f-4256-b7c6-6d2e6df4003d=
 switch-to-activity-e083ba0c-c16f-429d-b8db-0c87d4d4418b=
 switch-to-activity-e1f9ee80-eb83-409b-b234-8b43aa5cff24=
 
@@ -9,8 +10,8 @@ Switch to Next Keyboard Layout=Ctrl+Alt+K
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+[; Ctrl+PgUp
+Activate Next Tab=Ctrl+PgDown; Ctrl+]
+Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
 Back=Back; Alt+Left
@@ -18,7 +19,7 @@ BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
 Clear=
-Close=Ctrl+W; Ctrl+Esc
+Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
 Copy=Ctrl+C; Ctrl+Ins
@@ -47,7 +48,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Alt+Home; Home Page
+Home=Home Page; Alt+Home
 KeyBindings=
 Mail=
 MoveToTrash=Del
@@ -65,7 +66,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=F5; Refresh
+Reload=Refresh; F5
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -76,7 +77,7 @@ Save=Ctrl+S
 SaveAs=Ctrl+Shift+S
 SaveOptions=
 SelectAll=Ctrl+A
-ShowHideHiddenFiles=Ctrl+H; Alt+.
+ShowHideHiddenFiles=Alt+.; Ctrl+H
 ShowMenubar=Ctrl+M
 ShowStatusbar=
 ShowToolbar=
@@ -105,8 +106,12 @@ Show System Activity=Ctrl+Esc
 display=Meta+P; Display
 
 [khotkeys][Global Shortcuts]
+{099320dd-9e32-4f0c-b7b9-3257c05a7184}=Meta+Shift+F
 {1a0cc3f6-cbf9-4323-b9e1-22a0d51946e5}=Meta+Return
+{2579f229-4b73-436e-81bc-4a85cf74973a}=Meta+Shift+C
 {413dfd5f-1aef-459d-b44a-2fbb86a0327c}=Meta+Shift+W
+{4604a650-676c-4e0d-b474-eef3157a63b9}=Meta+Return
+{52abe102-9660-4e15-9d78-0da1b7775ac1}=Meta+Shift+W
 {678bed05-8e21-4a8f-ab70-1e6ae7ed3055}=
 {75ed49b9-d110-44b8-8bf5-4a1245f188d1}=Meta+Shift+C
 {7c26a6d4-407a-4d8d-bef8-c2f8c3547e6c}=Ctrl+Print
@@ -133,9 +138,11 @@ Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp
 [kwin][Global Shortcuts]
 Activate Window Demanding Attention=Meta+Ctrl+Up
 Decrease Opacity=
-Expose=Ctrl+F9; Meta+A
+Edit Tiles=Meta+T
+Expose=Meta+A; Ctrl+F9
 ExposeAll=Meta+Shift+A; Ctrl+F10; Launch (C)
 ExposeClass=Meta+Alt+A; Ctrl+F7
+ExposeClassCurrentDesktop=
 Increase Opacity=
 Invert Screen Colors=
 Kill Window=Ctrl+Alt+Esc
@@ -148,7 +155,7 @@ MoveZoomUp=
 Overview=Meta+W
 Setup Window Shortcut=
 Show Desktop=Meta+D
-ShowDesktopGrid=Meta+Alt+Tab; Ctrl+F8
+ShowDesktopGrid=Ctrl+F8; Meta+Alt+Tab
 Suspend Compositing=Alt+Shift+F12
 Switch One Desktop Down=
 Switch One Desktop Up=
@@ -190,6 +197,10 @@ Switch to Screen 4=
 Switch to Screen 5=
 Switch to Screen 6=
 Switch to Screen 7=
+Switch to Screen Above=
+Switch to Screen Below=
+Switch to Screen to the Left=
+Switch to Screen to the Right=
 Toggle Night Color=Meta+Shift+R
 Toggle Window Raise/Lower=
 Walk Through Desktop List=
@@ -206,7 +217,7 @@ Walk Through Windows of Current Application Alternative=
 Walk Through Windows of Current Application Alternative (Reverse)=
 Window Above Other Windows=Meta++
 Window Below Other Windows=
-Window Close=Meta+Shift+Q; Alt+F4
+Window Close=Alt+F4; Meta+Shift+Q
 Window Fullscreen=
 Window Grow Horizontal=
 Window Grow Vertical=
@@ -221,8 +232,12 @@ Window No Border=
 Window On All Desktops=
 Window One Desktop Down=Meta+Ctrl+Shift+Down
 Window One Desktop Up=Meta+Ctrl+Shift+Up
-Window One Desktop to the Left=Meta+Shift+PgUp; Meta+Ctrl+Shift+Left
+Window One Desktop to the Left=Meta+Ctrl+Shift+Left; Meta+Shift+PgUp
 Window One Desktop to the Right=Meta+Shift+PgDown; Meta+Ctrl+Shift+Right
+Window One Screen Down=
+Window One Screen Up=
+Window One Screen to the Left=
+Window One Screen to the Right=
 Window Operations Menu=Alt+F3
 Window Pack Down=
 Window Pack Left=
@@ -283,26 +298,31 @@ mediavolumeup=
 nextmedia=Meta+.; Media Next
 pausemedia=Media Pause
 playmedia=
-playpausemedia=Meta+/; Media Play
+playpausemedia=Media Play; Meta+/
 previousmedia=Media Previous; Meta+,
 stopmedia=Media Stop
 
 [org.kde.dolphin.desktop][Global Shortcuts]
 _launch=Meta+E
 
+[org.kde.konsole.desktop][Global Shortcuts]
+NewTab=
+NewWindow=
+_launch=Ctrl+Alt+T
+
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Alt+Space; Meta+Space; Alt+F2; Search
+_launch=Alt+F2; Alt+Space; Meta+Space; Search
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
 _launch=
 
 [org.kde.spectacle.desktop][Global Shortcuts]
-ActiveWindowScreenShot=Meta+Print
+ActiveWindowScreenShot=Meta+Print; Alt, Alt+SysReq
 CurrentMonitorScreenShot=
 FullScreenScreenShot=Shift+Print
 OpenWithoutScreenshot=
-RectangularRegionScreenShot=Meta+Shift+Print
+RectangularRegionScreenShot=Ctrl+Print; Meta+Shift+Print
 WindowUnderCursorScreenShot=Meta+Ctrl+Print
 _launch=Print
 
