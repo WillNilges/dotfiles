@@ -111,7 +111,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 vim.o.hlsearch = false
 
 -- Make line numbers default
-vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -133,6 +133,9 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.cmd [[colorscheme slate]]
+
+-- Emphasize cursorline
+vim.o.cursorline = true
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -291,6 +294,8 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+-- vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "Identifier" })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -427,6 +432,9 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- Finally, set the match parenthesis colors to something usable
+vim.cmd [[hi MatchParen guibg=white guifg=gray]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
