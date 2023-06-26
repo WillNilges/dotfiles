@@ -433,8 +433,12 @@ cmp.setup {
   },
 }
 
+-- Set up an 80-column ruler
+vim.cmd [[set colorcolumn=80]]
+vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
+
 -- Finally, set the match parenthesis colors to something usable
-vim.cmd [[hi MatchParen guibg=white guifg=gray]]
+vim.cmd [[hi MatchParen guibg=gray guifg=white]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
