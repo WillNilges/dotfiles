@@ -1,7 +1,6 @@
 export ZSH="/home/wilnil/.oh-my-zsh"
 
 ZSH_THEME="wilnil-lowkey"
-
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -14,6 +13,8 @@ source $ZSH/oh-my-zsh.sh
  else
    export EDITOR='nvim'
  fi
+
+export SSH_AUTH_SOCK="/tmp/$USER.agent"
 
 alias zshrc="nvim ~/.zshrc"
 alias nv="nvim"
@@ -31,7 +32,7 @@ alias cls="clear"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
-alias agent='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519'
+alias agent='eval "$(ssh-agent -a /tmp/$USER.agent)" && ssh-add ~/.ssh/id_ed25519'
 
 key (){
     key="ed25519"
