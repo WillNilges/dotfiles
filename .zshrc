@@ -65,3 +65,19 @@ cnf() {
     chom=$(curl --silent https://command-not-found.com/$1 | grep pacman)
     echo $chom | sed -e 's/<[^>]*>//g'
 }
+
+# Update a .env-style config file without opening it
+cfg() {
+    input_file=$1
+    input_key=$2
+    input_val=$3
+
+    mod=$(sed "s/$input_key=.*/$input_key=$input_val/" $input_file)
+    if [[ "$mod" == "$(cat "$input_file")" ]]; then
+        echo "Key not found. Adding to file."
+        echo "$input_key=$input_val" >> $input_file
+    else
+        echo $mod > $input_file
+    fi
+    echo "File updated."
+}
