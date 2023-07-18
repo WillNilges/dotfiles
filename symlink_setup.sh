@@ -1,5 +1,19 @@
 #!/bin/bash
 
+test_link() {
+	if [ -L ${my_link} ] ; then
+	   if [ -e ${my_link} ] ; then
+	      echo "Good link"
+	   else
+	      echo "Broken link"
+	   fi
+	elif [ -e ${my_link} ] ; then
+	   echo "Not a link"
+	else
+	   echo "Missing"
+	fi
+}
+
 ln -s ~/Code/dotfiles/.vimrc ~/.vimrc
 ln -s ~/Code/dotfiles/nvim/ ~/.config/nvim
 ln -s ~/Code/dotfiles/openbox ~/.config/openbox
