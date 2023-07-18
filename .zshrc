@@ -72,12 +72,28 @@ cfg() {
     input_key=$2
     input_val=$3
 
-    mod=$(sed "s/$input_key=.*/$input_key=$input_val/" $input_file)
-    if [[ "$mod" == "$(cat "$input_file")" ]]; then
-        echo "Key not found. Adding to file."
-        echo "$input_key=$input_val" >> $input_file
-    else
-        echo $mod > $input_file
+    if [ ! -f $input_file ]; then
+        echo "File does not exist."
+        return
     fi
-    echo "File updated."
+
+    grep "$input_key"'=' $input_file >> /dev/null 
+
+    if [ $? -eq 0 ]; then
+        sed -i "s/$input_key=.*/$input_key=$input_val/" $input_file
+    else
+        echo "$input_key=$input_val" >> $input_file
+    fi
+}
+
+cfg_del() {
+    input_file=$1
+    input_key=$2
+
+    if [ ! -f $input_file ]; then
+        echo "File does not exist."
+        return
+    fi
+
+    sed -i "/$input_key=.*/d" $input_file
 }
