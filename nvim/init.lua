@@ -433,6 +433,11 @@ cmp.setup {
   },
 }
 
+-- Consistent indentation
+vim.cmd [[set tabstop=4]]
+vim.cmd [[set shiftwidth=4]]
+vim.cmd [[set expandtab]]
+
 -- Set up an 80-column ruler
 vim.cmd [[set colorcolumn=80]]
 vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]

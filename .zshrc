@@ -16,22 +16,29 @@ source $ZSH/oh-my-zsh.sh
 
 export SSH_AUTH_SOCK="/tmp/$USER.agent"
 
+# Editing Quality of Life
 alias zshrc="nvim ~/.zshrc"
 alias nv="nvim"
 alias vim="nvim"
 alias vi="nvim"
+
+# Navigation 
 alias sl="ls"
+alias fgui="dolphin .&"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
+
+# Python convenience
 alias py="python3"
 alias py3="python3"
 alias py2="python2"
-alias bcl="bc -l"
-alias clc="bc -l"
-alias fgui="dolphin .&"
-alias xit="exit"
-alias cls="clear"
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
+alias new_venv="python -m venv venv"
+alias activate="source venv/bin/activate"
+
+# Good memes
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
+
+# Make SSH Agent work properly
 alias agent='eval "$(ssh-agent -a /tmp/$USER.agent)" && ssh-add ~/.ssh/id_ed25519'
 
 key (){
