@@ -5,8 +5,8 @@ highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 set autoindent
 set tabstop=4
-set shiftwidth=4
-set expandtab
+"set shiftwidth=4
+"set expandtab
 set laststatus=2
 set mouse=a
 set clipboard=unnamed
