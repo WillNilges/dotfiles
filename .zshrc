@@ -34,6 +34,15 @@ alias py2="python2"
 alias new_venv="python -m venv venv"
 alias activate="source venv/bin/activate"
 
+# Kube convenience
+alias o="oc"
+alias k="kubectl"
+alias pik="kubectl --kubeconfig=$HOME/.kube/central.kubeconfig"
+
+pik-ns () {
+    pik config set-context --current --namespace=$1
+}
+
 # Good memes
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
