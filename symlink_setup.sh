@@ -22,3 +22,4 @@ ln -s ~/Code/dotfiles/rofi ~/.config/rofi
 ln -s ~/Code/dotfiles/.zshrc ~/.zshrc
 ln -s ~/Code/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
+ln -s ~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
