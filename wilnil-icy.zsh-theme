@@ -11,10 +11,10 @@ autoload -Uz vcs_info
 CHUNK_START="%F{blue}▞▟%K{blue}▘%f"
 CHUNK_END="%K{blue}%F{blue}▗%k▛▞%f"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="$CHUNK_START%{$fg_bold[green]%}±%{$reset_color%}%K{blue}%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="$CHUNK_START%{$fg_bold[white]%}±%{$reset_color%}%K{blue}%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$CHUNK_END"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%K{green}%{$fg_bold[black]%}✔%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%K{red}%{$fg_bold[white]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
