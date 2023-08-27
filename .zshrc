@@ -22,6 +22,8 @@ alias nv="nvim"
 alias vim="nvim"
 alias vi="nvim"
 
+alias code="codium"
+
 # Navigation 
 alias sl="ls"
 alias fgui="dolphin .&"
@@ -38,6 +40,8 @@ alias activate="source venv/bin/activate"
 alias o="oc"
 alias k="kubectl"
 alias pik="kubectl --kubeconfig=$HOME/.kube/central.kubeconfig"
+
+alias p="podman"
 
 pik-ns () {
     pik config set-context --current --namespace=$1
