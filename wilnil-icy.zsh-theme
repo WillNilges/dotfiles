@@ -37,6 +37,12 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
 WHOAMI='%{$blue_tm%}%B[%b%{\e[0m%}%{\e[1;39m%}%b%n@%m%{$blue_tm%}%B]'
 
-PROMPT=$'$(kube_ps1) $CHUNK_START%B%F{white}%~%f%b$CHUNK_END $(git_prompt_info)\n%(?.%F{white}.%F{red})⛰ %f'
+PATH_CHUNK="$CHUNK_START%F{white}%D{%L:%M:%S} %B%~%f%b$CHUNK_END"
+
+ICEBERG="%(?.%F{white}.%F{red})⛰ %f"
+
+TIME_CHUNK="$CHUNK_START%D{%L:%M:%S}$CHUNK_END"
+
+PROMPT=$'$PATH_CHUNK $(kube_ps1) $(git_prompt_info)\n$ICEBERG'
 
 #ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
