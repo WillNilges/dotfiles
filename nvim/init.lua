@@ -171,8 +171,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    component_separators = '|',
-    section_separators = '',
+    component_separators = { left = '\\', right = '/'},
+    section_separators = { left = '▙', right = '▟'},
+
+    theme = 'material'
   },
 }
 
@@ -354,8 +356,8 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
+  gopls = {},
+  pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
 }
@@ -433,6 +435,8 @@ cmp.setup {
   },
 }
 
+-- The stuff that I added
+
 -- Consistent indentation
 vim.cmd [[set tabstop=4]]
 -- vim.cmd [[set shiftwidth=4]]
@@ -442,9 +446,11 @@ vim.cmd [[set tabstop=4]]
 vim.cmd [[set colorcolumn=80]]
 vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
 
--- Finally, set the match parenthesis colors to something usable
+-- Set the match parenthesis colors to something usable
 vim.cmd [[hi MatchParen guibg=gray guifg=white]]
 
+-- Show full path of file
+vim.cmd [[set title]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
