@@ -26,7 +26,13 @@ KUBE_PS1_CTX_COLOR="black"
 KUBE_PS1_NS_COLOR="black"
 
 function get_cluster_short() {
-  echo "$1" | cut -d . -f1
+  stg_or_prod=$(echo "$1" | cut -d . -f3)
+  prod_alert=""
+  if [ $stg_or_prod != 'staging' ]; then
+    prod_alert="%F{white}%K{red}"
+  fi
+  my_cluster=$(echo "$1" | cut -d . -f1)
+  echo "$prod_alert$my_cluster%F{black}%K{white}"
 }
 
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
