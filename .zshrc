@@ -43,6 +43,13 @@ alias pik="kubectl --kubeconfig=$HOME/.kube/central.kubeconfig"
 
 alias p="podman"
 
+# Docker (and act) convenience
+alias dock="docker"
+alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:latest --container-options '--network host'" # Check the act directory if this breaks and build as such
+
+#alias dockstop="docker stop $(docker ps -a -q)"
+#alias dockclear="docker rm $(docker ps -a -q)"
+
 pik-ns () {
     pik config set-context --current --namespace=$1
 }
