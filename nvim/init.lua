@@ -38,6 +38,10 @@ require('packer').startup(function(use)
     end,
   }
 
+  use {
+    'rrethy/vim-illuminate'
+  }
+
   use { -- Additional text objects via treesitter
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
@@ -71,6 +75,8 @@ require('packer').startup(function(use)
         "MunifTanjim/nui.nvim",
       }
     }
+
+  use 'simrat39/symbols-outline.nvim'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -451,6 +457,10 @@ vim.cmd [[hi MatchParen guibg=gray guifg=white]]
 
 -- Show full path of file
 vim.cmd [[set title]]
+
+vim.cmd [[set hlsearch]]
+
+require("symbols-outline").setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
