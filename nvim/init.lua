@@ -38,6 +38,10 @@ require('packer').startup(function(use)
     end,
   }
 
+  use {
+    'rrethy/vim-illuminate'
+  }
+
   use { -- Additional text objects via treesitter
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
@@ -71,6 +75,8 @@ require('packer').startup(function(use)
         "MunifTanjim/nui.nvim",
       }
     }
+
+  use 'simrat39/symbols-outline.nvim'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -171,8 +177,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    component_separators = '|',
-    section_separators = '',
+    component_separators = { left = '\\', right = '/'},
+    section_separators = { left = '▙', right = '▟'},
+
+    theme = 'material'
   },
 }
 
@@ -353,10 +361,10 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
+  clangd = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
   -- tsserver = {},
 }
 
@@ -433,6 +441,16 @@ cmp.setup {
   },
 }
 
+-- The stuff that I added
+
+require('neo-tree').setup {
+  filesystem = {
+    filtered_items = {
+      visible = true,
+    },
+  }
+}
+
 -- Consistent indentation
 vim.cmd [[set tabstop=4]]
 -- vim.cmd [[set shiftwidth=4]]
@@ -442,9 +460,15 @@ vim.cmd [[set tabstop=4]]
 vim.cmd [[set colorcolumn=80]]
 vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
 
--- Finally, set the match parenthesis colors to something usable
+-- Set the match parenthesis colors to something usable
 vim.cmd [[hi MatchParen guibg=gray guifg=white]]
 
+-- Show full path of file
+vim.cmd [[set title]]
+
+vim.cmd [[set hlsearch]]
+
+require("symbols-outline").setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
