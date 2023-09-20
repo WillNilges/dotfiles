@@ -21,7 +21,7 @@ GIT_CHUNK_END="▗%k▛▞%{$reset_color%}"
 KUBE_PS1_PREFIX="%F{white}▞▟%K{white}▘%f"
 KUBE_PS1_SUFFIX="%K{white}%F{white}▗%k▛▞%f" #"▗%k▛%f" 
 
-KUBE_PS1_DIVIDER="▞"
+KUBE_PS1_DIVIDER="▗%K{white}▘"
 KUBE_PS1_SEPARATOR=""
 KUBE_PS1_CTX_COLOR="black"
 KUBE_PS1_NS_COLOR="black"
@@ -33,7 +33,7 @@ function get_cluster_short() {
     prod_alert="%F{white}%K{red}"
   fi
   my_cluster=$(echo "$1" | cut -d . -f1)
-  echo "$prod_alert$my_cluster%F{black}%K{white}"
+  echo "$prod_alert$my_cluster%F{black}"
 }
 
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
