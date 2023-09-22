@@ -15,7 +15,7 @@ autoload -Uz vcs_info
 CHUNK_START="%F{blue}▞▟%K{blue}▘%f"
 CHUNK_END="%K{blue}%F{blue}▗%k▛▞%f"
 
-GIT_CHUNK_START=" %F{white}▞▟%K{white}▘%f"
+GIT_CHUNK_START="\b\b\b%K{white}▗▛" #▗▚▛" #" %F{white}▞▟%K{white}▘%f"
 GIT_CHUNK_END="▗%k▛▞%{$reset_color%}"
 
 KUBE_PS1_PREFIX="%F{white}▞▟%K{white}▘%f"
