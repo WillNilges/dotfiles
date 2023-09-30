@@ -28,6 +28,7 @@ alias code="codium"
 alias sl="ls"
 alias fgui="dolphin .&"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' #https://superuser.com/questions/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current
+alias t="tmux"
 
 # Python convenience
 alias py="python3"

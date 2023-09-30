@@ -51,6 +51,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
+  use 'rhysd/git-messenger.vim'
 
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -177,7 +178,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    component_separators = { left = '\\', right = '/'},
+    component_separators = { left = '', right = ''},
     section_separators = { left = '▙', right = '▟'},
 
     theme = 'material'
