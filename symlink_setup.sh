@@ -1,25 +1,39 @@
 #!/bin/bash
 
 test_link() {
-	if [ -L ${my_link} ] ; then
-	   if [ -e ${my_link} ] ; then
+	if [ -L $1 ] ; then
+	   if [ -e $1 ] ; then
 	      echo "Good link"
 	   else
 	      echo "Broken link"
 	   fi
-	elif [ -e ${my_link} ] ; then
+	elif [ -e $1 ] ; then
 	   echo "Not a link"
 	else
 	   echo "Missing"
 	fi
 }
 
-ln -s ~/Code/dotfiles/.vimrc ~/.vimrc
-ln -s ~/Code/dotfiles/nvim/ ~/.config/nvim
-ln -s ~/Code/dotfiles/openbox ~/.config/openbox
-ln -s ~/Code/dotfiles/alacritty.yml ~/.config/alacritty.yml
-ln -s ~/Code/dotfiles/rofi ~/.config/rofi
-ln -s ~/Code/dotfiles/.zshrc ~/.zshrc
-ln -s ~/Code/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
-ln -s ~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
+declare -a links=(
+	~/Code/dotfiles/.vimrc ~/.vimrc
+	~/Code/dotfiles/nvim/ ~/.config/nvim
+	~/Code/dotfiles/openbox ~/.config/openbox
+	~/Code/dotfiles/alacritty.yml ~/.config/alacritty.yml
+	~/Code/dotfiles/rofi ~/.config/rofi
+	~/Code/dotfiles/.zshrc ~/.zshrc
+	~/Code/dotfiles/.tmux.conf ~/.tmux.conf
+	~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
+	~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
+)
+
+for ((i=0; i<${#links[@]}; i+=2)); do
+	src=${links[i]}
+	dest=${links[i+1]}
+	echo $src $dest
+	exists=$(test_link $dest)
+	if [ ! "$exists" = "Good link" ]; then
+		ln -s $src $dest
+	else
+		echo "Link already exists."
+	fi
+done
