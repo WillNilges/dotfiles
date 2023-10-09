@@ -1,6 +1,6 @@
 export ZSH="/home/wilnil/.oh-my-zsh"
 
-ZSH_THEME="wilnil-smoky"
+ZSH_THEME="wilnil-lowkey"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
