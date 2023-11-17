@@ -16,6 +16,12 @@ source $ZSH/oh-my-zsh.sh
 
 export SSH_AUTH_SOCK="/tmp/$USER.agent"
 
+# Scratchypad
+alias scratchypad="~/Code/dotfiles/scratchypad.sh"
+
+# Networking
+alias scan_wifi="nmcli dev wifi list --rescan yes"
+
 # Editing Quality of Life
 alias zshrc="nvim ~/.zshrc"
 alias nv="nvim"
