@@ -1,42 +1,4 @@
---[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-
-Kickstart.nvim is *not* a distribution.
-
-Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, understand
-  what your configuration is doing, and modify it to suit your needs.
-
-  Once you've done that, you should start exploring, configuring and tinkering to
-  explore Neovim!
-
-  If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
-  - https://learnxinyminutes.com/docs/lua/
-
-
-  And then you can explore or search through `:help lua-guide`
-  - https://neovim.io/doc/user/lua-guide.html
-
-
-Kickstart Guide:
-
-I have left several `:help X` comments throughout the init.lua
-You should run that command and read that help section for more information.
-
-In addition, I have some `NOTE:` items throughout the file.
-These are for you, the reader to help understand what is happening. Feel free to delete
-them once you know what you're doing, but they should serve as a guide for when you
-are first encountering a few different constructs in your nvim config.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now :)
---]]
+-- Forked from kickstart.nvim
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -169,8 +131,8 @@ require('lazy').setup({
       options = {
         icons_enabled = false,
         theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '▙', right = '▟'},
       },
     },
   },
@@ -230,6 +192,19 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+  },
 }, {})
 
 -- [[ Setting options ]]
@@ -240,10 +215,13 @@ require('lazy').setup({
 vim.o.hlsearch = false
 
 -- Make line numbers default
-vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+
+-- Emphasize cursorline
+vim.o.cursorline = true
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -441,6 +419,8 @@ vim.defer_fn(function()
   }
 end, 0)
 
+vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "Identifier" })
+
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -601,6 +581,35 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- The stuff that I added
+
+-- require('neo-tree').setup {
+--   filesystem = {
+--     filtered_items = {
+--       visible = true,
+--     },
+--   }
+-- }
+-- 
+-- require("symbols-outline").setup()
+
+-- Consistent indentation
+vim.cmd [[set tabstop=4]]
+-- vim.cmd [[set shiftwidth=4]]
+-- vim.cmd [[set expandtab]]
+
+-- Set up an 80-column ruler
+vim.cmd [[set colorcolumn=80]]
+vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
+
+-- Set the match parenthesis colors to something usable
+vim.cmd [[hi MatchParen guibg=gray guifg=white]]
+
+-- Show full path of file
+vim.cmd [[set title]]
+
+vim.cmd [[set hlsearch]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
