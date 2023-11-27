@@ -1,0 +1,2 @@
+alt - return : /bin/bash ~/Code/dotfiles/skhd/open_iterm2.sh
+alt - w : open -na "Google Chrome" --args --new-window https://google.com 
