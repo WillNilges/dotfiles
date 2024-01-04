@@ -1,0 +1,18 @@
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "EnvyCodeR Nerd Font Mono"
+
+[font.bold_italic]
+family = "EnvyCodeR Nerd Font Mono"
+
+[font.italic]
+family = "EnvyCodeR Nerd Font Mono"
+
+[font.normal]
+family = "EnvyCodeR Nerd Font Mono"
