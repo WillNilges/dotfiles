@@ -18,7 +18,7 @@ declare -a links=(
 	~/Code/dotfiles/.vimrc ~/.vimrc
 	~/Code/dotfiles/nvim/ ~/.config/nvim
 	~/Code/dotfiles/openbox ~/.config/openbox
-	~/Code/dotfiles/alacritty.yml ~/.config/alacritty.yml
+	~/Code/dotfiles/alacritty.toml ~/.config/alacritty.toml
 	~/Code/dotfiles/rofi ~/.config/rofi
 	~/Code/dotfiles/.zshrc ~/.zshrc
 	~/Code/dotfiles/.tmux.conf ~/.tmux.conf
