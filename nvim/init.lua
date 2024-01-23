@@ -620,7 +620,7 @@ vim.cmd [[set tabstop=4]]
 
 -- Set up an 80-column ruler
 vim.cmd [[set colorcolumn=80]]
-vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
+-- vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
 
 -- Set the match parenthesis colors to something usable
 vim.cmd [[hi MatchParen guibg=gray guifg=white]]
