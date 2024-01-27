@@ -114,12 +114,19 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+  --{
+  --  -- Theme inspired by Atom
+  --  'navarasu/onedark.nvim',
+  --  priority = 1000,
+  --  config = function()
+  --    vim.cmd.colorscheme 'onedark'
+  --  end,
+  --},
+
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      -- vim.cmd.colorscheme 'catppuccin-latte'
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 
@@ -130,7 +137,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        -- theme = 'catppuccin-latte',
+        theme = 'catppuccin-mocha',
         component_separators = { left = '', right = ''},
         section_separators = { left = '▙', right = '▟'},
       },
@@ -603,8 +611,10 @@ vim.cmd [[set tabstop=4]]
 -- vim.cmd [[set expandtab]]
 
 -- Set up an 80-column ruler
-vim.cmd [[set colorcolumn=80]]
-vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#333333]]
+-- vim.cmd [[set colorcolumn=80]]
+-- vim.cmd [[set colorcolumn=120]]
+--vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#EAEAEA]]
+--vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#000000]]
 
 -- Set the match parenthesis colors to something usable
 vim.cmd [[hi MatchParen guibg=gray guifg=white]]
