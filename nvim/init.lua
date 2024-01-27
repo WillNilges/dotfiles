@@ -114,12 +114,10 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      -- vim.cmd.colorscheme 'catppuccin-latte'
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 
@@ -130,7 +128,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        -- theme = 'catppuccin-latte',
+        theme = 'catppuccin-mocha',
         component_separators = { left = '', right = ''},
         section_separators = { left = '▙', right = '▟'},
       },
