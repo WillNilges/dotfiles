@@ -211,7 +211,16 @@ require('lazy').setup({
     }
   },
   {
-    "simrat39/symbols-outline.nvim",
+    "hedyhli/outline.nvim",
+    config = function()
+      -- Example mapping to toggle outline
+      vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+        { desc = "Toggle Outline" })
+
+      require("outline").setup {
+        -- Your setup opts here (leave empty to use defaults)
+      }
+    end,
   },
   {
     "RRethy/vim-illuminate",
@@ -640,3 +649,6 @@ vim.cmd[[autocmd CursorHold * lua vim.diagnostic.open_float({scope="line"})]]
 
 -- This is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+vim.keymap.set('n', '<leader>n', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+

@@ -39,7 +39,7 @@ function get_cluster_short() {
 
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 
-ZSH_THEME_GIT_PROMPT_PREFIX="$GIT_CHUNK_START%{$fg_bold[white]%}±"
+ZSH_THEME_GIT_PROMPT_PREFIX="$GIT_CHUNK_START%{$reset_color%}±"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$GIT_CHUNK_END%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%F{white}▗%K{green}▘%f%{$fg_bold[white]%}✔%F{green}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%F{white}▗%K{red}▘%f%{$fg_bold[white]%}✗%F{red}"
@@ -51,7 +51,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
 PATH_CHUNK="$CHUNK_START%F{white}%B%~%f%b$CHUNK_END " # Time is %T
 
-ICEBERG="%(?.%F{white}.%F{red})⛰ %f"
+ICEBERG="%(?.%{$reset_color%}.%F{red})⛰ %f"
 
 PROMPT=$'$PATH_CHUNK$(kube_ps1) $(git_prompt_info)\n$ICEBERG'
 
