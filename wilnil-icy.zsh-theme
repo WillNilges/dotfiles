@@ -20,24 +20,24 @@ GIT_CHUNK_END="▗%k▛▞%{$reset_color%}"
 #
 #KUBE_PS1_PREFIX="%F{white}▞▟%K{white}▘%f"
 #KUBE_PS1_SUFFIX="%K{white}%F{white}▗%k▛▞%f" #"▗%k▛%f" 
-KUBE_PS1_PREFIX=''
-KUBE_PS1_SUFFIX='%k'
-#KUBE_PS1_DIVIDER="▗%K{white}▘"
-KUBE_PS1_SEPARATOR=""
-KUBE_PS1_CTX_COLOR="white"
-KUBE_PS1_NS_COLOR="white"
-
-function get_cluster_short() {
-  stg_or_prod=$(echo "$1" | cut -d . -f3)
-  prod_alert=""
-  if [ $stg_or_prod != 'staging' ]; then
-    prod_alert="%F{white}%K{red}"
-  fi
-  my_cluster=$(echo "$1" | cut -d . -f1)
-  echo "$prod_alert$my_cluster"
-}
-
-KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+#KUBE_PS1_PREFIX=''
+#KUBE_PS1_SUFFIX='%k'
+##KUBE_PS1_DIVIDER="▗%K{white}▘"
+#KUBE_PS1_SEPARATOR=""
+#KUBE_PS1_CTX_COLOR="white"
+#KUBE_PS1_NS_COLOR="white"
+#
+#function get_cluster_short() {
+#  stg_or_prod=$(echo "$1" | cut -d . -f3)
+#  prod_alert=""
+#  if [ $stg_or_prod != 'staging' ]; then
+#    prod_alert="%F{white}%K{red}"
+#  fi
+#  my_cluster=$(echo "$1" | cut -d . -f1)
+#  echo "$prod_alert$my_cluster"
+#}
+#
+#KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 
 ZSH_THEME_GIT_PROMPT_PREFIX="$GIT_CHUNK_START%{$reset_color%}±"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$GIT_CHUNK_END%{$reset_color%}"
@@ -53,6 +53,7 @@ PATH_CHUNK="$CHUNK_START%F{white}%B%~%f%b$CHUNK_END " # Time is %T
 
 ICEBERG="%(?.%{$reset_color%}.%F{red})⛰ %f"
 
-PROMPT=$'$PATH_CHUNK$(kube_ps1) $(git_prompt_info)\n$ICEBERG'
+#PROMPT=$'$PATH_CHUNK$(kube_ps1) $(git_prompt_info)\n$ICEBERG'
+PROMPT=$'$PATH_CHUNK$(kubectx -c) $(git_prompt_info)\n$ICEBERG'
 
 #ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
