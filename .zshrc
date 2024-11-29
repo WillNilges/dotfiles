@@ -39,8 +39,8 @@ alias t="tmux"
 alias py="python3"
 alias py3="python3"
 alias py2="python2"
-alias new_venv="python -m venv venv"
-alias activate="source venv/bin/activate"
+alias new_venv="python -m venv .venv"
+alias activate="source .venv/bin/activate"
 
 # Kube convenience
 alias o="oc"
@@ -130,3 +130,12 @@ cfg_del() {
 
     sed -i "/$input_key=.*/d" $input_file
 }
+
+# MeshDB beta env
+export KUBECONFIG=~/.kube/config-dev3
+alias prod1="KUBECONFIG=~/.kube/config-prod1 kubectl"
+alias prod2="KUBECONFIG=~/.kube/config-prod2 kubectl"
+alias dev3="KUBECONFIG=~/.kube/config-dev3 kubectl"
+
+# Created by `pipx` on 2024-09-01 14:22:53
+export PATH="$PATH:/home/wilnil/.local/bin"
