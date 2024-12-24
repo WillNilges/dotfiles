@@ -1,6 +1,6 @@
-export ZSH="/home/wilnil/.oh-my-zsh"
+export ZSH="/home/bits/.oh-my-zsh"
 
-ZSH_THEME="wilnil-smoky"
+ZSH_THEME="wilnil-lowkey"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -64,36 +64,7 @@ pik-ns () {
 # Good memes
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
-
-# Make SSH Agent work properly
-alias agent='eval "$(ssh-agent -a /tmp/$USER.agent)" && ssh-add ~/.ssh/id_ed25519'
-
-key (){
-    key="ed25519"
-    type=".pub"
-    while test $# -gt 0; do
-        case "$1" in
-            --rsa)
-                key="rsa"
-                ;;
-            --ed25519)
-                key="ed25519"
-                ;;
-            --private || -p)
-                type=""
-                ;;
-        esac
-        shift
-    done
-    cat /home/wilnil/.ssh/id_$key$type
-
-}
-
-# Clone a git repo real easy
-gogit () {
-    git clone git@github.com:$1.git $2
-}
-
+#
 # Query Command Not Found for the correct Arch package to install
 cnf() {
     chom=$(curl --silent https://command-not-found.com/$1 | grep pacman)
