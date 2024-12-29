@@ -650,7 +650,7 @@ vim.cmd [[autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None]]
 
 
-vim.cmd[[autocmd CursorHold * lua vim.diagnostic.open_float({scope="line"})]]
+vim.cmd[[autocmd CursorHold * lua vim.diagnostic.open_float({scope="line", focusable = false})]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

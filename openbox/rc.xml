@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Wblue</name>
+    <name>Bear2</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -222,22 +222,22 @@
     <!-- Bindings for Rofi -->
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -show drun -font "IBM Plex Mono 12"</command>
+        <command>rofi -show drun -font "IosevkaTerm NF 12"</command>
       </action>
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>rofi -show run -font "IBM Plex Mono 12"</command>
+        <command>rofi -show run -font "IosevkaTerm NF 12"</command>
       </action>
     </keybind>
     <keybind key="W-Tab">
       <action name="execute">
-        <command>rofi -show window -font "IBM Plex Mono 12"</command>
+        <command>rofi -show window -font "IosevkaTerm NF 12"</command>
       </action>
     </keybind>
     <keybind key="W-grave">
       <action name="execute">
-        <command>rofi -show windowcd -font "IBM Plex Mono 12"</command>
+        <command>rofi -show windowcd -font "IosevkaTerm NF 12"</command>
       </action>
     </keybind>
     <!-- Bindings for app launching -->
