@@ -116,7 +116,7 @@ require('lazy').setup({
 
   { "catppuccin/nvim", name = "catppuccin", priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'catppuccin-latte'
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 
@@ -129,7 +129,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'catppuccin-latte',
+        theme = 'catppuccin-mocha',
         component_separators = { left = '', right = ''},
         section_separators = { left = '▙', right = '▟'},
       },
@@ -636,7 +636,7 @@ vim.cmd [[autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None]]
 
 
-vim.cmd[[autocmd CursorHold * lua vim.diagnostic.open_float({scope="line"})]]
+vim.cmd[[autocmd CursorHold * lua vim.diagnostic.open_float({scope="line", focusable = false})]]
 
 -- This is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
