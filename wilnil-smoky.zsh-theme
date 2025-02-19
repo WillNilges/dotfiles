@@ -6,7 +6,7 @@ B_POST='%f%k%B%F{cyan}▒░%f%b'
 GIT_PRE='%B%F{cyan}[%f%b%K{cyan}%F{black}'
 GIT_POST='%f%k%B%F{cyan}]%f%b'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="$GIT_PRE%{$reset_color%}±%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="$GIT_PRE%{$reset_color%}±"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$GIT_POST"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✘%{$reset_color%}"
