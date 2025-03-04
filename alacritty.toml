@@ -12,4 +12,4 @@ WINIT_X11_SCALE_FACTOR = "1"
 size = 12.0
 
 [font.normal]
-family = "IosevkaTerm NF"
+family = "IosevkaTerm NerdFont"
