@@ -139,4 +139,8 @@ alias dev3="KUBECONFIG=~/.kube/config-dev3 kubectl"
 alias gamma1="KUBECONFIG=~/.kube/config-gamma1 kubectl"
 
 # Created by `pipx` on 2024-09-01 14:22:53
-export PATH="$PATH:/home/wilnil/.local/bin"
+export PATH="$PATH:/home/wilnil/.cargo/bin:/home/wilnil/.local/bin"
+
+# Contents of export-esp.sh
+export PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp-elf/esp-14.2.0_20240906/xtensa-esp-elf/bin:$PATH"
+export LIBCLANG_PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-19.1.2_20250225/esp-clang/lib"
