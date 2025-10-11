@@ -8,7 +8,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+
+      # We should pin this and specify a hash.
+      # To retrieve the hash, run this command:
+      # nix-prefetch-url --unpack https://github.com/nix-community/disko/archive/67ff9807dd148e704baadbd4fd783b54282ca627.tar.gz
+      "${builtins.fetchTarball {
+        url = "https://github.com/nix-community/disko/archive/67ff9807dd148e704baadbd4fd783b54282ca627.tar.gz";
+        sha256 = "1idmamxrqy4vmggx5p0d0ikjc16p9mq92x8a1cwwm8y3zl8rls90";
+      }}/module.nix"
+
+      # Also include disk config
       ./luks-btrfs-subvolumes.nix
     ];
 
@@ -89,6 +98,7 @@
   # Enable these packages.
   programs.firefox.enable = true;
   programs.git.enable = true;
+  programs.htop.enable = true;
   programs.zsh.enable = true;
   programs.zsh.ohMyZsh.enable = true;
   programs.zsh.ohMyZsh.theme = "cypher";
