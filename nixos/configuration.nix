@@ -67,6 +67,8 @@
     #media-session.enable = true;
   };
 
+  services.flatpak.enable = true;
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wilnil = {
@@ -85,20 +87,20 @@
   # Enable these packages.
   programs.firefox.enable = true;
   programs.git.enable = true;
-  programs.winbox.enable = true;
   programs.zsh.enable = true;
+  programs.zsh.ohMyZsh.enable = true;
+  programs.zsh.ohMyZsh.theme = "cypher";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty
-    git
     neovim
     tmux
     wget
-    winbox
-    zsh
   ];
+
+  virtualisation.podman.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
