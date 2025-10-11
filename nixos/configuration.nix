@@ -107,11 +107,16 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty
+    go
     libgcc
     neovim
-    vim
+    nodejs
+    ripgrep
     tmux
+    unzip
+    vim
     wget
+    zip
   ];
 
   virtualisation.podman.enable = true;

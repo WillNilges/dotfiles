@@ -54,6 +54,8 @@ alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:lates
 #alias dockstop="docker stop $(docker ps -a -q)"
 #alias dockclear="docker rm $(docker ps -a -q)"
 
+alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos"
+
 pik-ns () {
     pik config set-context --current --namespace=$1
 }
