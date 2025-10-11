@@ -25,8 +25,6 @@ alias scan_wifi="nmcli dev wifi list --rescan yes"
 # Editing Quality of Life
 alias zshrc="nvim ~/.zshrc"
 alias v="nvim"
-alias vim="echo chom"
-alias vimm="vim"
 alias code="codium"
 
 # Navigation 
