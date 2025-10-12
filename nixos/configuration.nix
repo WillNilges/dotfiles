@@ -80,14 +80,15 @@
 
   services.flatpak.enable = true;
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wilnil = {
     isNormalUser = true;
     description = "Willard";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      discord
       kdePackages.kate
+      signal-desktop
     ];
     shell = pkgs.zsh;
   };
