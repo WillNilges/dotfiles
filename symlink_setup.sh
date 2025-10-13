@@ -1,5 +1,19 @@
 #!/bin/bash
 
+declare -a links=(
+	~/Code/dotfiles/alacritty.toml ~/.config/alacritty.toml
+	~/Code/dotfiles/.zshrc ~/.zshrc
+	~/Code/dotfiles/.tmux.conf ~/.tmux.conf
+	~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
+	~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
+
+	# Unused on willardpad
+	#~/Code/dotfiles/.vimrc ~/.vimrc
+	#~/Code/dotfiles/nvim/ ~/.config/nvim
+	#~/Code/dotfiles/openbox ~/.config/openbox
+	#~/Code/dotfiles/rofi ~/.config/rofi
+)
+
 test_link() {
 	if [ -L $1 ] ; then
 	   if [ -e $1 ] ; then
@@ -13,18 +27,6 @@ test_link() {
 	   echo "Missing"
 	fi
 }
-
-declare -a links=(
-	~/Code/dotfiles/.vimrc ~/.vimrc
-	~/Code/dotfiles/nvim/ ~/.config/nvim
-	~/Code/dotfiles/openbox ~/.config/openbox
-	~/Code/dotfiles/alacritty.toml ~/.config/alacritty.toml
-	~/Code/dotfiles/rofi ~/.config/rofi
-	~/Code/dotfiles/.zshrc ~/.zshrc
-	~/Code/dotfiles/.tmux.conf ~/.tmux.conf
-	~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
-	~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
-)
 
 for ((i=0; i<${#links[@]}; i+=2)); do
 	src=${links[i]}

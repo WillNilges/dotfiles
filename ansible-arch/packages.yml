@@ -1,0 +1,26 @@
+---
+packages:
+  - ansible
+  - alacritty
+  - apparmor
+  - base-devel
+  - curl
+  - flatpak
+  - git
+  - discord
+  - man-db
+  - neovim
+  - nodejs
+  - power-profiles-daemon
+  - python-pexpect
+  - signal-desktop
+  - tailscale
+  - tmux
+  - ufw
+  - unzip
+  - vlc
+  - wget
+  - zip
+  - zsh
+aur-packages:
+  - slack-desktop

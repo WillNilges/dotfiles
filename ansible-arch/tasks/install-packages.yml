@@ -1,0 +1,7 @@
+---
+- name: Install packages
+  become: true
+  community.general.pacman:
+    name: "{{ packages }}"
+    state: present
+  changed_when: false

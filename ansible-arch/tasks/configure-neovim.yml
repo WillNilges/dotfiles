@@ -1,0 +1,6 @@
+---
+- name: Clone neovim config
+  ansible.builtin.git:
+    repo: 'git@github.com:willnilges/kickstart.nvim'
+    dest: ~/.config/nvim
+    accept_newhostkey: true

@@ -1,0 +1,3 @@
+---
+- name: Configure Symlinks
+  ansible.builtin.script: ../symlink_setup.sh

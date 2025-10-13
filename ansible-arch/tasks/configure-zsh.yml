@@ -1,0 +1,23 @@
+---
+- name: Change Shell to ZSH
+  become: true
+  ansible.builtin.user:
+    name: wilnil
+    shell: /bin/zsh
+    state: present
+
+- name: Check if OhMyZsh directory exists
+  ansible.builtin.stat:
+    path: /home/wilnil/.oh-my-zsh
+  register: omz_dir_status
+
+- name: Download OhMyZsh
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/install-ohmyzsh.sh
+  when: not omz_dir_status.stat.exists
+
+- name: Install OhMyZsh
+  ansible.builtin.script:
+    cmd: /tmp/install-ohmyzsh.sh --unattended
+  when: not omz_dir_status.stat.exists
