@@ -1,0 +1,12 @@
+---
+- name: Configure host
+  hosts: all
+
+  vars_files:
+    - packages.yml
+
+  tasks:
+    - import_tasks: tasks/install-packages.yml
+    - import_tasks: tasks/configure-zsh.yml
+    #- import_tasks: tasks/configure-symlinks.yml
+    - import_tasks: tasks/configure-neovim.yml
