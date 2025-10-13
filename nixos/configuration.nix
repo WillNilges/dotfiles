@@ -113,6 +113,7 @@
     neovim
     nodejs
     ripgrep
+    slack
     tmux
     unzip
     vim
@@ -121,6 +122,8 @@
   ];
 
   virtualisation.podman.enable = true;
+
+  programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
