@@ -27,6 +27,8 @@
   networking.hostName = "thinkwillardthink"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -88,6 +90,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # fonts
+  fonts.packages = [
+    pkgs.nerd-fonts.iosevka-term
+  ];
+
   # Enable these packages.
   programs.firefox.enable = true;
   programs.git.enable = true;
@@ -95,6 +102,7 @@
   programs.zsh.enable = true;
   programs.zsh.ohMyZsh.enable = true;
   programs.zsh.ohMyZsh.theme = "cypher";
+  programs.zsh.ohMyZsh.plugins = [ "git" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -104,6 +112,7 @@
     libgcc
     neovim
     nodejs
+    podman-compose
     ripgrep
     slack
     tmux
