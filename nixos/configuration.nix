@@ -9,14 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      # We should pin this and specify a hash.
-      # To retrieve the hash, run this command:
-      # nix-prefetch-url --unpack https://github.com/nix-community/disko/archive/67ff9807dd148e704baadbd4fd783b54282ca627.tar.gz
-      "${builtins.fetchTarball {
-        url = "https://github.com/nix-community/disko/archive/67ff9807dd148e704baadbd4fd783b54282ca627.tar.gz";
-        sha256 = "1idmamxrqy4vmggx5p0d0ikjc16p9mq92x8a1cwwm8y3zl8rls90";
-      }}/module.nix"
-
       # Also include disk config
       ./luks-btrfs-subvolumes.nix
     ];
@@ -123,7 +115,7 @@
 
   virtualisation.podman.enable = true;
 
-  programs.nix-ld.enable = true;
+  #programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
