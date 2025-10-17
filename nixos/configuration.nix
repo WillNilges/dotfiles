@@ -19,6 +19,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelParams = [
+    "intel_idle.max_cstate=1"
+  ];
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -48,13 +52,15 @@
   };
 
 
+  # XXX (wdn): not sure if I need this or if this is the best option.
+  #services.tlp.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -100,15 +106,18 @@
   programs.git.enable = true;
   programs.htop.enable = true;
   programs.zsh.enable = true;
-  programs.zsh.ohMyZsh.enable = true;
-  programs.zsh.ohMyZsh.theme = "cypher";
-  programs.zsh.ohMyZsh.plugins = [ "git" ];
+  #programs.zsh.ohMyZsh.enable = true;
+  #programs.zsh.ohMyZsh.theme = "cypher";
+  #programs.zsh.ohMyZsh.plugins = [ "git" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty
+    dig
+    file
     go
+    kubectl
     libgcc
     neovim
     nodejs

@@ -1,6 +1,6 @@
-#export ZSH="/home/wilnil/.oh-my-zsh"
+export ZSH="/home/wilnil/.oh-my-zsh"
 
-#ZSH_THEME="wilnil-smoky"
+ZSH_THEME="afowler"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -54,6 +54,7 @@ alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:lates
 #alias dockstop="docker stop $(docker ps -a -q)"
 #alias dockclear="docker rm $(docker ps -a -q)"
 
+alias nixedit="nvim ~/Code/dotfiles/nixos/"
 alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos"
 
 pik-ns () {

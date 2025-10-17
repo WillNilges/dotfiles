@@ -6,6 +6,7 @@ declare -a links=(
 	~/Code/dotfiles/.tmux.conf ~/.tmux.conf
 	~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
 	~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
+	~/Code/dotfiles/willard-cypher.zsh-theme ~/.oh-my-zsh/custom/themes/willard-cypher.zsh-theme
 
 	# Unused on willardpad
 	#~/Code/dotfiles/.vimrc ~/.vimrc
