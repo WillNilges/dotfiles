@@ -19,9 +19,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelParams = [
-    "intel_idle.max_cstate=1"
-  ];
+  #boot.kernelParams = [
+  #  "intel_idle.max_cstate=1"
+  #];
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -55,6 +55,8 @@
   # XXX (wdn): not sure if I need this or if this is the best option.
   #services.tlp.enable = true;
 
+  services.fwupd.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -77,6 +79,8 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  services.tailscale.enable = true;
 
   services.flatpak.enable = true;
 
@@ -114,7 +118,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty
+    ansible
     dig
+    ffmpeg
     file
     go
     kubectl
@@ -125,8 +131,11 @@
     ripgrep
     slack
     tmux
+    traceroute
     unzip
     vim
+    virtualbox
+    vlc
     wget
     zip
   ];

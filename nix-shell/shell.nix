@@ -7,6 +7,7 @@ pkgs.mkShell {
     python312
     cargo
     rustc
+    hugo
   ];
   packages = [
     (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
