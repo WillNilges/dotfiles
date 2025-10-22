@@ -1,6 +1,6 @@
 export ZSH="/home/wilnil/.oh-my-zsh"
 
-ZSH_THEME="wilnil-smoky"
+ZSH_THEME="afowler"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -25,8 +25,6 @@ alias scan_wifi="nmcli dev wifi list --rescan yes"
 # Editing Quality of Life
 alias zshrc="nvim ~/.zshrc"
 alias v="nvim"
-alias vim="echo chom"
-alias vimm="vim"
 alias code="codium"
 
 # Navigation 
@@ -55,6 +53,9 @@ alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:lates
 
 #alias dockstop="docker stop $(docker ps -a -q)"
 #alias dockclear="docker rm $(docker ps -a -q)"
+
+alias nixedit="nvim ~/Code/dotfiles/nixos/"
+alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos"
 
 pik-ns () {
     pik config set-context --current --namespace=$1
