@@ -17,6 +17,7 @@
         ./configuration.nix
         ./hardware-configuration.nix
         ./luks-btrfs-subvolumes.nix
+        ./willard-sway.nix
       ];
     };
   };

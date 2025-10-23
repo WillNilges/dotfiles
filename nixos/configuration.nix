@@ -11,6 +11,7 @@
 
       # Also include disk config
       ./luks-btrfs-subvolumes.nix
+      ./willard-sway.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -93,6 +94,7 @@
       discord
       libreoffice
       kdePackages.kate
+      libreoffice
       signal-desktop
     ];
     shell = pkgs.zsh;
