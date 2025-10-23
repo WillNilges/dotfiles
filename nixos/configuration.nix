@@ -92,6 +92,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       discord
+      libreoffice
       kdePackages.kate
       libreoffice
       signal-desktop

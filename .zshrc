@@ -56,6 +56,7 @@ alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:lates
 
 alias nixedit="nvim ~/Code/dotfiles/nixos/"
 alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos"
+alias nixboot="nixos-rebuild boot --use-remote-sudo --flake ~/Code/dotfiles/nixos"
 
 pik-ns () {
     pik config set-context --current --namespace=$1
