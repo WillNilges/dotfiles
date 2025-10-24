@@ -1,8 +1,20 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
+# color defines for zenburn styled i3
+set $bg     #2c2c2c
+set $fg     #9f9f9f
+set $hi     #efef8f
+set $ac     #55cc99
+set $tx     #040404
+set $ia     #8f8f8f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+
+# set some nice colors      border     background  text
+client.focused              $ac        $ac         $tx
+client.unfocused            $ac        $bg         $ia
+client.focused_inactive     $bg        $bg         $ac
+client.urgent               $rd        $rd         $tx
 
 ### Variables
 #
@@ -43,6 +55,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec nm-applet
+exec blueman-applet
 
 ### Input configuration
 #
