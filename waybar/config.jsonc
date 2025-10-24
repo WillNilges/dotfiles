@@ -17,21 +17,13 @@
     ],
     "modules-right": [
         "mpd",
-        "idle_inhibitor",
         "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-        "cpu",
         "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
+        "cpu",
         "battery",
-        "battery#bat2",
+        "power-profiles-daemon",
         "clock",
         "tray",
-        "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {
