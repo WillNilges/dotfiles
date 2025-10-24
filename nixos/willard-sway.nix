@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
+    alsa-utils
     grim # screenshot functionality
     mako # notification system developed by swaywm maintainer
     networkmanagerapplet
