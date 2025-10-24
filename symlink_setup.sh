@@ -7,6 +7,8 @@ declare -a links=(
 	~/Code/dotfiles/wilnil-lowkey.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-lowkey.zsh-theme
 	~/Code/dotfiles/wilnil-smoky.zsh-theme ~/.oh-my-zsh/custom/themes/wilnil-smoky.zsh-theme
 	~/Code/dotfiles/willard-cypher.zsh-theme ~/.oh-my-zsh/custom/themes/willard-cypher.zsh-theme
+    ~/Code/dotfiles/sway ~/.config/sway
+    ~/Code/dotfiles/waybar ~/.config/waybar
 
 	# Unused on willardpad
 	#~/Code/dotfiles/.vimrc ~/.vimrc
