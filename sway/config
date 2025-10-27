@@ -12,9 +12,11 @@ set $rd     #e89393
 
 # set some nice colors      border     background  text
 client.focused              $ac        $ac         $tx
-client.unfocused            $ac        $bg         $ia
+client.unfocused            $ia        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
 client.urgent               $rd        $rd         $tx
+
+font "IosevkaTerm NerdFont" Medium 11
 
 input "type:keyboard" {
     xkb_options "caps:escape, compose:ralt"
