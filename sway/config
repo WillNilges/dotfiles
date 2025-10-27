@@ -12,7 +12,7 @@ set $rd     #e89393
 
 # set some nice colors      border     background  text
 client.focused              $ac        $ac         $tx
-client.unfocused            $ia        $bg         $ia
+client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
 client.urgent               $rd        $rd         $tx
 
