@@ -5,6 +5,7 @@
     grim # screenshot functionality
     mako # notification system developed by swaywm maintainer
     networkmanagerapplet
+    networkmanager_dmenu
     slurp # screenshot functionality
     swayidle
     swaylock

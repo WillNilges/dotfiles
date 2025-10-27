@@ -9,6 +9,7 @@ declare -a links=(
 	~/Code/dotfiles/willard-cypher.zsh-theme ~/.oh-my-zsh/custom/themes/willard-cypher.zsh-theme
     ~/Code/dotfiles/sway ~/.config/sway
     ~/Code/dotfiles/waybar ~/.config/waybar
+    ~/Code/dotfiles/networkmanager-dmenu ~/.config/networkmanager-dmenu
 
 	# Unused on willardpad
 	#~/Code/dotfiles/.vimrc ~/.vimrc
