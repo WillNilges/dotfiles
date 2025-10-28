@@ -75,6 +75,8 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
+alias chardiff="git diff --word-diff=color --word-diff-regex=."
+
 alias code="codium"
 
 # Navigation 
@@ -101,3 +103,15 @@ alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export GITLAB_TOKEN=$(security find-generic-password -a ${USER} -s gitlab_token -w)
+
+# Created by `pipx` on 2025-10-20 14:27:47
+export PATH="$PATH:/Users/willard.nilges/.local/bin"
+
+# BEGIN SCFW MANAGED BLOCK
+alias npm="scfw run npm"
+alias pip="scfw run pip"
+alias poetry="scfw run poetry"
+export SCFW_DD_AGENT_LOG_PORT="10365"
+export SCFW_DD_LOG_LEVEL="ALLOW"
+export SCFW_HOME="/Users/willard.nilges/.scfw"
+# END SCFW MANAGED BLOCK
