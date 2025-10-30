@@ -170,6 +170,7 @@
         "on-click": "networkmanager_dmenu"
     },
     "bluetooth": {
+        "format-connected": " ",
         "on-click": "blueman-manager",
     },
     "pulseaudio": {
