@@ -20,6 +20,7 @@
     "modules-right": [
         "tray",
         "mpd",
+        "backlight",
         "pulseaudio",
         "bluetooth",
         "network",
