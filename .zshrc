@@ -55,8 +55,8 @@ alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:lates
 #alias dockclear="docker rm $(docker ps -a -q)"
 
 alias nixedit="nvim ~/Code/dotfiles/nixos/"
-alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos#thinkwillardthink"
-alias nixboot="nixos-rebuild boot --use-remote-sudo --flake ~/Code/dotfiles/nixos#thinkwillardthink"
+alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake path:///home/wilnil/Code/dotfiles/nixos#thinkwillardthink"
+alias nixboot="nixos-rebuild boot --use-remote-sudo --flake path:///home/wilnil/Code/dotfiles/nixos#thinkwillardthink"
 
 pik-ns () {
     pik config set-context --current --namespace=$1
