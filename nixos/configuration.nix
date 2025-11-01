@@ -11,7 +11,7 @@
 
       # Also include disk config
       ./luks-btrfs-subvolumes.nix
-      ./destop-sway.nix
+      ./desktop-sway.nix
       ./vpn-wireguard.nix
     ];
 
