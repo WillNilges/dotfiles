@@ -11,7 +11,8 @@
 
       # Also include disk config
       ./luks-btrfs-subvolumes.nix
-      ./willard-sway.nix
+      ./destop-sway.nix
+      ./vpn-wireguard.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
