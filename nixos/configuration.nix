@@ -93,6 +93,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       discord
+      gimp
       libreoffice
       kdePackages.kate
       libreoffice
