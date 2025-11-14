@@ -30,7 +30,7 @@
 
   boot.initrd.systemd.enable = true;
 
-  networking.hostName = "willardpad"; # Define your hostname.
+  networking.hostName = "thinkwillardthink"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   hardware.bluetooth.enable = true;

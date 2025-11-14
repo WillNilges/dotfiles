@@ -15,6 +15,6 @@ echo "Look good? Press enter to continue."
 read good
 
 cp /mnt/etc/nixos/hardware-configuration.nix ./nixos
-sudo nixos-install --flake ./nixos#willardpad
+sudo nixos-install --flake ./nixos#thinkwillardthink
 
 echo "bye bye"

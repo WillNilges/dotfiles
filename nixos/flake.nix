@@ -11,7 +11,7 @@
 
   outputs = { self, disko, nixpkgs, ... }@inputs: {
     # Please replace my-nixos with your hostname
-    nixosConfigurations.willardpad = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.thinkwillardthink = nixpkgs.lib.nixosSystem {
       modules = [
         disko.nixosModules.disko
         ./configuration.nix
