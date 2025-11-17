@@ -6,7 +6,9 @@
     mako # notification system developed by swaywm maintainer
     networkmanagerapplet
     networkmanager_dmenu
+    pavucontrol
     playerctl
+    seahorse
     slurp # screenshot functionality
     swayidle
     swaylock

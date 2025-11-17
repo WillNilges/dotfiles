@@ -92,11 +92,13 @@
     description = "Willard";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      ansible
       discord
       gimp
-      libreoffice
       kdePackages.kate
+      kubernetes-helm
       libreoffice
+      qpwgraph
       signal-desktop
     ];
     shell = pkgs.zsh;
@@ -123,7 +125,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty
-    ansible
     dig
     ffmpeg
     file
@@ -162,6 +163,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  networking.firewall.enable = true; # Just to be sure...
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

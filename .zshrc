@@ -140,6 +140,8 @@ alias prod2="KUBECONFIG=~/.kube/config-prod2 kubectl"
 alias dev3="KUBECONFIG=~/.kube/config-dev3 kubectl"
 alias gamma1="KUBECONFIG=~/.kube/config-gamma1 kubectl"
 
+alias pub="KUBECONFIG=~/.kube/config-pub kubectl"
+
 # Created by `pipx` on 2024-09-01 14:22:53
 export PATH="$PATH:/home/wilnil/.cargo/bin:/home/wilnil/.local/bin"
 
