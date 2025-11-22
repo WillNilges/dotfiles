@@ -96,10 +96,13 @@
       discord
       gimp
       kdePackages.kate
+      kubectl
       kubernetes-helm
       libreoffice
       qpwgraph
       signal-desktop
+      slack
+      vlc
     ];
     shell = pkgs.zsh;
   };
@@ -129,19 +132,16 @@
     ffmpeg
     file
     go
-    kubectl
     libgcc
     neovim
     nodejs
     podman-compose
     ripgrep
-    slack
     tmux
     traceroute
     unzip
     vim
     virtualbox
-    vlc
     wget
     zip
   ];
