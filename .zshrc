@@ -4,6 +4,7 @@ ZSH_THEME="afowler"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.wilnil.env
 
 # User configuration
 
@@ -55,8 +56,8 @@ alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:lates
 #alias dockclear="docker rm $(docker ps -a -q)"
 
 alias nixedit="nvim ~/Code/dotfiles/nixos/"
-alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos#thinkwillardthink"
-alias nixboot="nixos-rebuild boot --use-remote-sudo --flake ~/Code/dotfiles/nixos#thinkwillardthink"
+alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos#$WILNIL_MACHINE"
+alias nixboot="nixos-rebuild boot --use-remote-sudo --flake ~/Code/dotfiles/nixos#$WILNIL_MACHINE"
 
 pik-ns () {
     pik config set-context --current --namespace=$1
