@@ -1,3 +1,6 @@
+
+{ config, lib, pkgs, ... }:
+
 {
     imports = [];
     options = {};
