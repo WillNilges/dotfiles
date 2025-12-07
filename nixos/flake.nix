@@ -2,8 +2,8 @@
   description = "Willard's sick laptop config";
 
   inputs = {
-    # NixOS official package source, using the nixos-25.05 branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    # NixOS official package source, using the nixos-25.11 branch here
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     disko.url = "github:nix-community/disko/latest";
     disko.inputs.nixpkgs.follows = "nixpkgs";

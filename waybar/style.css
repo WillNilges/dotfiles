@@ -105,9 +105,9 @@ button:hover {
 }
 
 #window {
-    background-color: #64727D;
     /*box-shadow: inset 0 -3px #ffffff;*/
     padding: 0px 10px 0px 10px;
+    font-weight: bold;
 }
 
 

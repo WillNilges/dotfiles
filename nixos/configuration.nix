@@ -96,9 +96,11 @@
       discord
       gimp
       kdePackages.kate
+      kdePackages.okular
       kubectl
       kubernetes-helm
       libreoffice
+      obs-studio
       qpwgraph
       signal-desktop
       slack
