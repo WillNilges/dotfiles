@@ -22,6 +22,12 @@ input "type:keyboard" {
     xkb_options "caps:escape, compose:ralt"
 }
 
+
+input "type:touchpad" {
+    clickfinger_button_map lrm
+}
+
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.

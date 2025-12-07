@@ -11,10 +11,11 @@ declare -a links=(
 	~/Code/dotfiles/waybar ~/.config/waybar
 	~/Code/dotfiles/networkmanager-dmenu ~/.config/networkmanager-dmenu
 	~/Code/dotfiles/gtk-3.0 ~/.config/gtk-3.0
+	~/Code/dotfiles/
 
 	# Unused on willardpad
 	#~/Code/dotfiles/.vimrc ~/.vimrc
-	#~/Code/dotfiles/nvim/ ~/.config/nvim
+	#~/Code/dotfiles/nvim/ ~/.config/nvim # Use the dedicated script instead
 	#~/Code/dotfiles/openbox ~/.config/openbox
 	#~/Code/dotfiles/rofi ~/.config/rofi
 )
