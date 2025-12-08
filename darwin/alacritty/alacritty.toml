@@ -1,0 +1,11 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/dayfox.toml"
+]
+
+
+[font]
+size = 12
+
+[font.normal]
+family = "Hack Nerd Font Mono"

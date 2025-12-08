@@ -1,9 +1,12 @@
 #!/bin/bash
 
+set -euo pipefail
+
 declare -a links=(
     ~/Code/dotfiles/darwin/.aerospace.toml ~/.aerospace.toml
     ~/Code/dotfiles/darwin/.zshrc ~/.zshrc
     ~/Code/dotfiles/darwin/.tmux.conf ~/.tmux.conf
+    ~/Code/dotfiles/darwin/alacritty/ ~/.config/alacritty
 )
 
 test_link() {
@@ -31,3 +34,5 @@ for ((i=0; i<${#links[@]}; i+=2)); do
 		echo "Link already exists."
 	fi
 done
+
+git clone git@github.com:alacritty/alacritty-theme $HOME/.config/alacritty/themes
