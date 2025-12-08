@@ -13,5 +13,5 @@
         ../../modules/desktop-sway.nix
     ];
 
-    networking.hostName = "willardpad"; # Define your hostname.
+    networking.hostName = "thinkwillardthink"; # Define your hostname.
 }

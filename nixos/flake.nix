@@ -17,5 +17,11 @@
         ./host/willardpad
       ];
     };
+    nixosConfigurations.thinkwillardthink = nixpkgs.lib.nixosSystem {
+      modules = [
+        disko.nixosModules.disko
+        ./host/thinkwillardthink
+      ];
+    };
   };
 }
