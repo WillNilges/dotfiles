@@ -99,6 +99,17 @@ alias k="kubectl"
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
 
+function hostdb() {
+    LOGICAL_NAME=$1
+    K8S_CLUSTER=$2
+
+    kubectl exec \
+      --context $K8S_CLUSTER \
+      --namespace orgstore-$LOGICAL_NAME \
+      -it \
+      deployment/orgstore-$LOGICAL_NAME-toolbox -- pg-wrap -o $LOGICAL_NAME psql
+}
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
