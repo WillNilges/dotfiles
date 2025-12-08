@@ -13,8 +13,6 @@ declare -a links=(
 	~/Code/dotfiles/gtk-3.0 ~/.config/gtk-3.0
 
 	# Unused on willardpad
-	#~/Code/dotfiles/.vimrc ~/.vimrc
-	#~/Code/dotfiles/nvim/ ~/.config/nvim
 	#~/Code/dotfiles/openbox ~/.config/openbox
 	#~/Code/dotfiles/rofi ~/.config/rofi
 )
