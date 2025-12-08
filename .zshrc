@@ -1,63 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="wilnil-fowl"
+
+ZSH_THEME="afowler"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# BEGIN ANSIBLE MANAGED BLOCK
-# Load homebrew shell variables
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Force certain more-secure behaviours from homebrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_CASK_OPTS=--require-sha
-export HOMEBREW_DIR=/opt/homebrew
-export HOMEBREW_BIN=/opt/homebrew/bin
-
-# Load python shims
-eval "$(pyenv init -)"
-
-# Load ruby shims
-eval "$(rbenv init -)"
-
-# Prefer GNU binaries to Macintosh binaries.
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-
-# Add datadog devtools binaries to the PATH
-export PATH="$HOME/dd/devtools/bin:$PATH"
-
-# Point GOPATH to our go sources
-export GOPATH="$HOME/go"
-
-# Add binaries that are go install-ed to PATH
-export PATH="$GOPATH/bin:$PATH"
-
-# Point DATADOG_ROOT to ~/dd symlink
-export DATADOG_ROOT="$HOME/dd"
-
-# Tell the devenv vm to mount $GOPATH/src rather than just dd-go
-export MOUNT_ALL_GO_SRC=1
-
-# store key in the login keychain instead of aws-vault managing a hidden keychain
-export AWS_VAULT_KEYCHAIN_NAME=login
-
-# tweak session times so you don't have to re-enter passwords every 5min
-export AWS_SESSION_TTL=24h
-export AWS_ASSUME_ROLE_TTL=1h
-
-# Helm switch from storing objects in kubernetes configmaps to
-# secrets by default, but we still use the old default.
-export HELM_DRIVER=configmap
-
-# Go 1.16+ sets GO111MODULE to off by default with the intention to
-# remove it in Go 1.18, which breaks projects using the dep tool.
-# https://blog.golang.org/go116-module-changes
-export GO111MODULE=auto
-# Configure Go to pull go.ddbuild.io packages.
-export GONOSUMDB=github.com/DataDog,go.ddbuild.io
-export GOPRIVATE=
-export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/testing/@current/"
-# END ANSIBLE MANAGED BLOCK
 
 # User configuration
 
@@ -68,15 +14,17 @@ export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror
    export EDITOR='nvim'
  fi
 
+export SSH_AUTH_SOCK="/tmp/$USER.agent"
+
+# Scratchypad
+alias scratchypad="~/Code/dotfiles/scratchypad.sh"
+
+# Networking
+alias scan_wifi="nmcli dev wifi list --rescan yes"
+
 # Editing Quality of Life
 alias zshrc="nvim ~/.zshrc"
-alias nv="nvim"
-alias vim="nvim"
-alias vi="nvim"
 alias v="nvim"
-
-alias chardiff="git diff --word-diff=color --word-diff-regex=."
-
 alias code="codium"
 
 # Navigation 
@@ -89,29 +37,114 @@ alias t="tmux"
 alias py="python3"
 alias py3="python3"
 alias py2="python2"
-alias new_venv="python -m venv venv"
-alias activate="source venv/bin/activate"
+alias new_venv="python -m venv .venv"
+alias activate="source .venv/bin/activate"
 
 # Kube convenience
+alias o="oc"
 alias k="kubectl"
+alias pik="kubectl --kubeconfig=$HOME/.kube/central.kubeconfig"
+
+alias p="podman"
+
+# Docker (and act) convenience
+alias dock="docker"
+alias wact="act --pull=false -P ubuntu-latest=willnilges/act-ubuntu-latest:latest --container-options '--network host'" # Check the act directory if this breaks and build as such
+
+#alias dockstop="docker stop $(docker ps -a -q)"
+#alias dockclear="docker rm $(docker ps -a -q)"
+
+alias nixedit="nvim ~/Code/dotfiles/nixos/"
+alias nixswitch="nixos-rebuild switch --use-remote-sudo --flake ~/Code/dotfiles/nixos#$(hostname)"
+alias nixboot="nixos-rebuild boot --use-remote-sudo --flake ~/Code/dotfiles/nixos#$(hostname)"
+
+pik-ns () {
+    pik config set-context --current --namespace=$1
+}
 
 # Good memes
 alias shrug="clear && echo '¯\_(ツ)_/¯'"
 alias lenny="clear && echo '( ͡° ͜ʖ ͡°)'"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export GITLAB_TOKEN=$(security find-generic-password -a ${USER} -s gitlab_token -w)
+# Make SSH Agent work properly
+alias agent='eval "$(ssh-agent -a /tmp/$USER.agent)" && ssh-add ~/.ssh/id_ed25519'
 
-# Created by `pipx` on 2025-10-20 14:27:47
-export PATH="$PATH:/Users/willard.nilges/.local/bin"
+key (){
+    key="ed25519"
+    type=".pub"
+    while test $# -gt 0; do
+        case "$1" in
+            --rsa)
+                key="rsa"
+                ;;
+            --ed25519)
+                key="ed25519"
+                ;;
+            --private || -p)
+                type=""
+                ;;
+        esac
+        shift
+    done
+    cat /home/wilnil/.ssh/id_$key$type
 
-# BEGIN SCFW MANAGED BLOCK
-alias npm="scfw run npm"
-alias pip="scfw run pip"
-alias poetry="scfw run poetry"
-export SCFW_DD_AGENT_LOG_PORT="10365"
-export SCFW_DD_LOG_LEVEL="ALLOW"
-export SCFW_HOME="/Users/willard.nilges/.scfw"
-# END SCFW MANAGED BLOCK
+}
+
+# Clone a git repo real easy
+gogit () {
+    git clone git@github.com:$1.git $2
+}
+
+# Query Command Not Found for the correct Arch package to install
+cnf() {
+    chom=$(curl --silent https://command-not-found.com/$1 | grep pacman)
+    echo $chom | sed -e 's/<[^>]*>//g'
+}
+
+# Update a .env-style config file without opening it
+cfg() {
+    input_file=$1
+    input_key=$2
+    input_val=$3
+
+    if [ ! -f $input_file ]; then
+        echo "File does not exist."
+        return
+    fi
+
+    grep "$input_key"'=' $input_file >> /dev/null 
+
+    if [ $? -eq 0 ]; then
+        sed -i "s/$input_key=.*/$input_key=$input_val/" $input_file
+    else
+        echo "$input_key=$input_val" >> $input_file
+    fi
+}
+
+cfg_del() {
+    input_file=$1
+    input_key=$2
+
+    if [ ! -f $input_file ]; then
+        echo "File does not exist."
+        return
+    fi
+
+    sed -i "/$input_key=.*/d" $input_file
+}
+
+# MeshDB beta env
+export KUBECONFIG=~/.kube/config-dev3
+alias prod1="KUBECONFIG=~/.kube/config-prod1 kubectl"
+alias prod2="KUBECONFIG=~/.kube/config-prod2 kubectl"
+alias dev3="KUBECONFIG=~/.kube/config-dev3 kubectl"
+alias gamma1="KUBECONFIG=~/.kube/config-gamma1 kubectl"
+
+alias pub="KUBECONFIG=~/.kube/config-pub kubectl"
+
+# Created by `pipx` on 2024-09-01 14:22:53
+export PATH="$PATH:/home/wilnil/.cargo/bin:/home/wilnil/.local/bin"
+
+# Contents of export-esp.sh
+export PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp-elf/esp-14.2.0_20240906/xtensa-esp-elf/bin:$PATH"
+export LIBCLANG_PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-19.1.2_20250225/esp-clang/lib"
