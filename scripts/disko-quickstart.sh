@@ -10,11 +10,11 @@ do
 done
 
 if [ -z ${host+x} ]; then
-    echo "Please provide a host";
+    echo "Please provide a host with -h";
     exit 1
 fi
 
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./nixos/luks-btrfs-subvolumes.nix
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./nixos/modules/luks-btrfs-subvolumes.nix
 
 mount | grep /mnt
 
@@ -26,7 +26,7 @@ sudo nixos-generate-config --no-filesystems --root /mnt
 echo "Look good? Press enter to continue."
 read good
 
-cp /mnt/etc/nixos/hardware-configuration.nix ./nixos
+cp /mnt/etc/nixos/hardware-configuration.nix "../nixos/host/$host"
 sudo nixos-install --flake "../nixos#$host" # XXX: Not 100% sure this will work. Replace with hostname if it breaks
 
 echo "bye bye"
