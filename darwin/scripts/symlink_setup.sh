@@ -7,6 +7,8 @@ declare -a links=(
     ~/Code/dotfiles/darwin/.zshrc ~/.zshrc
     ~/Code/dotfiles/darwin/.tmux.conf ~/.tmux.conf
     ~/Code/dotfiles/darwin/alacritty/ ~/.config/alacritty
+    ~/Code/dotfiles/darwin/datadog/ ~/.config/datadog
+
 )
 
 test_link() {
@@ -35,4 +37,4 @@ for ((i=0; i<${#links[@]}; i+=2)); do
 	fi
 done
 
-git clone git@github.com:alacritty/alacritty-theme $HOME/.config/alacritty/themes
+git clone git@github.com:alacritty/alacritty-theme $HOME/.config/alacritty/themes || echo "Already cloned themes"
