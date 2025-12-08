@@ -1,5 +1,11 @@
 #!/bin/bash
 
+declare -a links=(
+    ~/Code/dotfiles/darwin/.aerospace.toml ~/.aerospace.toml
+    ~/Code/dotfiles/darwin/.zshrc ~/.zshrc
+    ~/Code/dotfiles/darwin/.tmux.conf ~/.tmux.conf
+)
+
 test_link() {
 	if [ -L $1 ] ; then
 	   if [ -e $1 ] ; then
@@ -13,10 +19,6 @@ test_link() {
 	   echo "Missing"
 	fi
 }
-
-declare -a links=(
-    ~/Code/dotfiles/darwin/.aerospace.toml ~/.aerospace.toml
-)
 
 for ((i=0; i<${#links[@]}; i+=2)); do
 	src=${links[i]}
