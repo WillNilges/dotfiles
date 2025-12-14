@@ -69,6 +69,7 @@
 
   # Enable these packages.
   programs.firefox.enable = true;
+  programs.firefox.package = pkgs.librewolf;
   programs.git.enable = true;
   programs.htop.enable = true;
   programs.zsh.enable = true;
