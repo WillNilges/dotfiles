@@ -19,6 +19,9 @@
 
       networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+        #networking.nameservers = [ "8.8.8.8", "10.32.30.1", "10.32.31.88" ];
+        #networking.networkmanager.dns = "none";
+
       hardware.bluetooth.enable = true;
 
       # Set your time zone.

@@ -20,6 +20,7 @@
       qpwgraph
       signal-desktop
       slack
+      tiled
       vlc
     ];
     shell = pkgs.zsh;
