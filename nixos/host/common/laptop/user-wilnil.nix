@@ -12,16 +12,21 @@
       discord
       gimp
       kdePackages.kate
+      kdePackages.kdenlive
       kdePackages.okular
       kubectl
       kubernetes-helm
       libreoffice
+      gcc
+      mosh
       obs-studio
       qpwgraph
       signal-desktop
       slack
+      speedcrunch
       tiled
       vlc
+      wireshark
     ];
     shell = pkgs.zsh;
   };

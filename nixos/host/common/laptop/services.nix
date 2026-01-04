@@ -60,7 +60,7 @@
     #media-session.enable = true;
   };
 
-  #services.tailscale.enable = true;
+    #services.tailscale.enable = true;
 
   # fonts
   fonts.packages = [
