@@ -14,7 +14,7 @@ if [ -z ${host+x} ]; then
     exit 1
 fi
 
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./nixos/modules/luks-btrfs-subvolumes.nix
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount "../nixos/modules/luks-btrfs-subvolumes.nix"
 
 mount | grep /mnt
 
