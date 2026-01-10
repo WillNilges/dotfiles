@@ -47,6 +47,13 @@
         LC_TIME = "en_US.UTF-8";
       };
 
+      # Suspend-then-hibernate
+      services.power-profiles-daemon.enable = true;
+      services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+      systemd.sleep.extraConfig = ''
+      HibernateDelaySec=14400s
+      '';
+
       # This option defines the first version of NixOS you have installed on this particular machine,
       # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
       #
