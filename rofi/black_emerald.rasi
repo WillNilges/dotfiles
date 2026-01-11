@@ -10,8 +10,7 @@
     alternate-normal-background: transparent;
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  rgba ( 255, 195, 156, 100 % );
-    blue:                        #55cc99;
-    indigo:                      #55cc99;
+    emerald:                      #55cc99;
     urgent-foreground:           rgba ( 243, 132, 61, 100 % );
     alternate-urgent-background: transparent;
     active-foreground:           #FFFFFF;
@@ -23,17 +22,17 @@
     alternate-normal-foreground: @foreground;
     normal-background:           transparent;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  @indigo;
+    selected-normal-background:  @emerald;
     border-color:                #000;
     spacing:                     2;
-    separatorcolor:              @blue;
+    separatorcolor:              @emerald;
     urgent-background:           transparent;
-    selected-urgent-background:  @indigo;
+    selected-urgent-background:  @emerald;
     alternate-urgent-foreground: @urgent-foreground;
     background-color:            rgba ( 0, 0, 0, 0 % );
     alternate-active-foreground: @active-foreground;
     active-background:           rgba ( 57, 57, 57, 100 % );
-    selected-active-background:  @indigo; 
+    selected-active-background:  @emerald;
 }
 window {
     background-color: #1d1f21;/*rgba ( 57, 57, 57, 95 % );*/
