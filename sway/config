@@ -36,7 +36,7 @@ set $term alacritty
 set $browser librewolf
 set $files dolphin 
 # Your preferred application launcher
-set $menu wmenu-run
+#set $menu wmenu-run
 
 ### Output configuration
 #
@@ -98,8 +98,11 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+Space exec $menu
-    bindsym $mod+d exec $menu
+    #bindsym $mod+Space exec $menu
+    #bindsym $mod+d exec $menu
+
+    bindsym $mod+Space exec rofi -font "IosevkaTerm NerdFont 11" -show run
+    bindsym $mod+Tab exec rofi -font "IosevkaTerm NerdFont 11" -show window
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

@@ -8,6 +8,7 @@
     networkmanager_dmenu
     pavucontrol
     playerctl
+    rofi
     seahorse
     slurp # screenshot functionality
     swayidle
