@@ -11,10 +11,10 @@ declare -a links=(
 	~/Code/dotfiles/waybar ~/.config/waybar
 	~/Code/dotfiles/networkmanager-dmenu ~/.config/networkmanager-dmenu
 	~/Code/dotfiles/gtk-3.0 ~/.config/gtk-3.0
+	~/Code/dotfiles/rofi ~/.config/rofi
 
 	# Unused on willardpad
 	#~/Code/dotfiles/openbox ~/.config/openbox
-	#~/Code/dotfiles/rofi ~/.config/rofi
 )
 
 test_link() {
