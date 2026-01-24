@@ -18,7 +18,7 @@ fi
 cd /home/nixos/dotfiles/scripts
 
 echo "Generate hardware config"
-sudo nixos-generate-conifg --show-hardware-config --no-filesystems > "../nixos/host/$host/hardware-configuration.nix"
+sudo nixos-generate-config --show-hardware-config --no-filesystems > "../nixos/host/$host/hardware-configuration.nix"
 
 echo "Partition disks"
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount --flake "../nixos#$host" 
