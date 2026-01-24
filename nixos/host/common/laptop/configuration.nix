@@ -11,9 +11,13 @@
       # Use the systemd-boot EFI boot loader.
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.systemd-boot.configurationLimit=5;
 
       # Use latest kernel.
       boot.kernelPackages = pkgs.linuxPackages_latest;
+
+      # To make vbox work
+      boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
 
       boot.initrd.systemd.enable = true;
 

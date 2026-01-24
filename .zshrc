@@ -149,3 +149,5 @@ export PATH="$PATH:/home/wilnil/.cargo/bin:/home/wilnil/.local/bin"
 # Contents of export-esp.sh
 export PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp-elf/esp-14.2.0_20240906/xtensa-esp-elf/bin:$PATH"
 export LIBCLANG_PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-19.1.2_20250225/esp-clang/lib"
+
+eval "$(direnv hook zsh)"

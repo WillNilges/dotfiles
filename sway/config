@@ -101,7 +101,8 @@ exec swayidle -w \
     #bindsym $mod+Space exec $menu
     #bindsym $mod+d exec $menu
 
-    bindsym $mod+Space exec rofi -font "IosevkaTerm NerdFont 11" -show run
+    bindsym $mod+z exec rofi -font "IosevkaTerm NerdFont 11" -show run
+    bindsym $mod+Space exec rofi -font "IosevkaTerm NerdFont 11" -show drun
     bindsym $mod+Tab exec rofi -font "IosevkaTerm NerdFont 11" -show window
 
     # Drag floating windows by holding down $mod and left mouse button.

@@ -28,12 +28,15 @@
     ripgrep
     tmux
     traceroute
+    tree
     unzip
     vim
-    virtualbox
     wget
     zip
   ];
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["wilnil"];
 
   services.fwupd.enable = true;
 

@@ -14,4 +14,5 @@
     ];
 
     networking.hostName = "willardpad"; # Define your hostname.
+    wilnil.system.primaryDrive = "/dev/nvme0n1";
 }

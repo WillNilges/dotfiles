@@ -6,12 +6,14 @@
   users.users.wilnil = {
     isNormalUser = true;
     description = "Willard";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
       ansible
       discord
+      direnv
       gimp
       kdePackages.kate
+      kdePackages.kamoso
       kdePackages.kdenlive
       kdePackages.okular
       kubectl
