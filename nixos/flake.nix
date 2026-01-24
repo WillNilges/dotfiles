@@ -23,5 +23,11 @@
         ./host/thinkwillardthink
       ];
     };
+    nixosConfigurations.phoenix = nixpkgs.lib.nixosSystem {
+      modules = [
+        disko.nixosModules.disko
+        ./host/phoenix
+      ];
+    };
   };
 }

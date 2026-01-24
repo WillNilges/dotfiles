@@ -1,11 +1,12 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
+  inherit (lib) types;
   cfg = config.wilnil.system;
 in
 {
   options.wilnil.system = {
     primaryDrive = lib.mkOption {
-      type = lib.types.string;
+      type = types.str;
       # default = ""; # Will throw error w/o default
     };
   };
