@@ -10,8 +10,9 @@
         ../../modules/luks-btrfs-subvolumes.nix
 
         ../../modules/desktop-sway.nix
+        ../../modules/driver-nvidia.nix
     ];
 
-    networking.hostName = "willardpad"; # Define your hostname.
+    networking.hostName = "phoenix"; # Define your hostname.
     wilnil.system.primaryDrive = "/dev/sda";
 }
