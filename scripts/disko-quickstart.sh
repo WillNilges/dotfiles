@@ -14,19 +14,16 @@ if [ -z ${host+x} ]; then
     exit 1
 fi
 
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount "../nixos/modules/luks-btrfs-subvolumes.nix"
+# This script assumes running from live nixos usb
+cd /home/nixos/dotfiles/scripts
 
-mount | grep /mnt
+echo "Generate hardware config"
+sudo nixos-generate-conifg --show-hardware-config --no-filesystems > "../nixos/host/$host/hardware-configuration.nix"
 
-echo "Look good? Press enter to continue."
-read good
+echo "Partition disks"
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount --flake "../nixos#$host" 
 
-sudo nixos-generate-config --no-filesystems --root /mnt
-
-echo "Look good? Press enter to continue."
-read good
-
-cp /mnt/etc/nixos/hardware-configuration.nix "../nixos/host/$host"
+echo "Install NixOS"
 sudo nixos-install --flake "../nixos#$host" # XXX: Not 100% sure this will work. Replace with hostname if it breaks
 
 echo "bye bye"
