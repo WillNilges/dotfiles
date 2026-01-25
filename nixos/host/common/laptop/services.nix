@@ -75,6 +75,11 @@
   programs.firefox.package = pkgs.librewolf;
   programs.git.enable = true;
   programs.htop.enable = true;
+  programs.winbox = {
+    enable = true;
+    package = pkgs.winbox4;
+    openFirewall = true;
+  };
   programs.zsh.enable = true;
 
   virtualisation.podman.enable = true;
