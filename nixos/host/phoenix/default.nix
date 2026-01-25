@@ -12,6 +12,7 @@
         ../../modules/desktop-sway.nix
         ../../modules/driver-nvidia.nix
         ../../modules/steam.nix
+        ../../modules/ssh-server.nix
     ];
 
     networking.hostName = "phoenix"; # Define your hostname.
