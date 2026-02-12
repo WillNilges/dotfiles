@@ -11,7 +11,9 @@
       ansible
       discord
       direnv
+      element-desktop
       gimp
+      inkscape
       kdePackages.kate
       kdePackages.kamoso
       kdePackages.kdenlive
