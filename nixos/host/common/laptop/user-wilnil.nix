@@ -12,6 +12,7 @@
       blender
       discord
       direnv
+      easyeffects
       element-desktop
       gimp
       inkscape
@@ -19,6 +20,7 @@
       kdePackages.kamoso
       kdePackages.kdenlive
       kdePackages.okular
+      krita
       kubectl
       kubernetes-helm
       libreoffice
