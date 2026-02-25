@@ -9,6 +9,7 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
       ansible
+      blender
       discord
       direnv
       element-desktop
