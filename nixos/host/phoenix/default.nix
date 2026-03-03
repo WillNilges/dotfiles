@@ -11,6 +11,7 @@
 
         ../../modules/desktop-sway.nix
         ../../modules/driver-nvidia.nix
+        ../../modules/openrazer.nix
         ../../modules/steam.nix
         ../../modules/ssh-server.nix
     ];
