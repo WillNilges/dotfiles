@@ -14,6 +14,7 @@
       direnv
       easyeffects
       element-desktop
+      freecad
       gimp
       inkscape
       kdePackages.kate
@@ -32,6 +33,7 @@
       slack
       speedcrunch
       tiled
+      trilium-desktop
       vlc
       wireshark
     ];
