@@ -9,6 +9,7 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
       ansible
+      #bambu-studio # TODO: Add maker user packages
       blender
       discord
       direnv
