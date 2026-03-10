@@ -21,6 +21,7 @@
       kdePackages.kamoso
       kdePackages.kdenlive
       kdePackages.okular
+      kicad
       krita
       kubectl
       kubernetes-helm

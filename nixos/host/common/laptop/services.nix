@@ -35,8 +35,8 @@
     zip
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["wilnil"];
+  #virtualisation.virtualbox.host.enable = true;
+  #users.extraGroups.vboxusers.members = ["wilnil"];
 
   services.fwupd.enable = true;
 
