@@ -15,7 +15,9 @@
       easyeffects
       element-desktop
       freecad
+      gcc
       gimp
+      helix
       inkscape
       kdePackages.kate
       kdePackages.kamoso
@@ -26,7 +28,6 @@
       kubectl
       kubernetes-helm
       libreoffice
-      gcc
       mosh
       obs-studio
       qpwgraph
