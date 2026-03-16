@@ -1,0 +1,9 @@
+[[language]]
+name = "go"
+language-id = "go"
+file-types = ["go"]
+injection-regex = "go"
+roots = []
+language-servers = ["gopls"]
+formatter = {command = "gofmt"}
+auto-format = true
