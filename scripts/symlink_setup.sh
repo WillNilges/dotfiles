@@ -12,6 +12,7 @@ declare -a links=(
 	~/Code/dotfiles/networkmanager-dmenu ~/.config/networkmanager-dmenu
 	~/Code/dotfiles/gtk-3.0 ~/.config/gtk-3.0
 	~/Code/dotfiles/rofi ~/.config/rofi
+	~/Code/dotfiles/helix ~/.config/helix
 
 	# Unused on willardpad
 	#~/Code/dotfiles/openbox ~/.config/openbox
