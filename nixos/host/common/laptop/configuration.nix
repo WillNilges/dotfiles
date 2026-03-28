@@ -14,7 +14,8 @@
       boot.loader.systemd-boot.configurationLimit=5;
 
       # Use latest kernel.
-      boot.kernelPackages = pkgs.linuxPackages_latest;
+      #boot.kernelPackages = pkgs.linuxPackages_latest;
+      boot.kernelPackages = pkgs.linuxPackages_6_18; # Downgrading kernel to address issues with nvidia and vbox
 
       # To make vbox work
       boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
