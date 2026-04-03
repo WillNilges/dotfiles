@@ -22,6 +22,10 @@
 
       boot.initrd.systemd.enable = true;
 
+      # This NixOS configuration is not intended for use in the state of california.
+      # Eat a brick, bootlickers.
+      systemd.package = pkgs.systemd.override { withUserDb = false; };
+
       networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
       # Custom DNS stuff for gal-net

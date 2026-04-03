@@ -46,6 +46,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  security.pam.services.login.kwallet.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

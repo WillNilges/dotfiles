@@ -38,6 +38,7 @@
       tiled
       trilium-desktop
       vlc
+      yt-dlp
       wireshark
     ];
     shell = pkgs.zsh;
