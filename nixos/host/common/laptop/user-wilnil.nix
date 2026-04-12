@@ -40,6 +40,7 @@
       vlc
       yt-dlp
       wireshark
+      zed-editor
     ];
     shell = pkgs.zsh;
   };
