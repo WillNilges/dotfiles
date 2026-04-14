@@ -11,6 +11,10 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
+
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
+
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
     alt-enter = '''exec-and-forget osascript -e '
     tell application "Alacritty"

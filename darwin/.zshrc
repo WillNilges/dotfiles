@@ -126,3 +126,16 @@ export SCFW_DD_AGENT_LOG_PORT="10365"
 export SCFW_DD_LOG_LEVEL="ALLOW"
 export SCFW_HOME="/Users/willard.nilges/.scfw"
 # END SCFW MANAGED BLOCK
+
+eval "$(dd-gitsign load-key)"
+
+# bzlt being an alias
+function bzlt() {
+    echo "Getting all targets for $1"
+    bzl query "kind(cnab_action_invocation, $1)"
+}
+
+alias ocd="opencode"
+
+export DD_AI_GATEWAY_API_TOKEN=$(ddtool auth token rapid-ai-platform --datacenter us1.staging.dog)
+
