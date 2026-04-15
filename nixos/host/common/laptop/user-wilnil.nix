@@ -20,6 +20,7 @@
       gimp
       helix
       inkscape
+      ironwail
       kdePackages.kate
       kdePackages.kamoso
       kdePackages.kdenlive

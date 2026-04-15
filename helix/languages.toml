@@ -7,3 +7,11 @@ roots = []
 language-servers = ["gopls"]
 formatter = {command = "gofmt"}
 auto-format = true
+
+[[language]]
+name = "c"
+language-id = "c"
+file-types = ["c", "h"]
+language-servers = ["clangd"]
+formatter = {command = "clang-format"}
+auto-format = true
