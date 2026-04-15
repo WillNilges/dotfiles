@@ -8,6 +8,7 @@ declare -a links=(
     ~/Code/dotfiles/darwin/.tmux.conf ~/.tmux.conf
     ~/Code/dotfiles/darwin/alacritty/ ~/.config/alacritty
     ~/Code/dotfiles/darwin/datadog/ ~/.config/datadog
+    ~/Code/dotfiles/zed ~/.config/zed
 
 )
 
