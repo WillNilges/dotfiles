@@ -22,7 +22,7 @@
     "context": "Editor",
     "bindings": {
       "ctrl-w": "pane::CloseActiveItem",
-      "ctrl-alt-h": "editor::SwitchSourceHeader",
+      "space h": "editor::SwitchSourceHeader",
     },
   },
 ]
