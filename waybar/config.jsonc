@@ -170,7 +170,9 @@
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "on-click": "networkmanager_dmenu"
     },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Bluetooth
     "bluetooth": {
+        "format-on": "on ",
         "format-connected": " ",
         "on-click": "blueman-manager",
     },
