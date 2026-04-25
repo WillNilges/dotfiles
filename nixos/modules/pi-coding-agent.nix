@@ -1,8 +1,11 @@
 { config, pkgs, lib, ... }:
 
 let
-  pi-coding-agent = pkgs.buildNpmPackage rec {
-    pname = "@mariozechner/pi-coding-agent";
+  # Use node2nix or a simpler approach with mkDerivation
+  # Since buildNpmPackage requires a lockfile and this is an npm tarball,
+  # we'll use a more straightforward approach with stdenv
+  pi-coding-agent = pkgs.stdenv.mkDerivation rec {
+    pname = "pi-coding-agent";
     version = "0.70.2";
 
     src = pkgs.fetchurl {
@@ -10,16 +13,25 @@ let
       hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
     };
 
-    npmDepsHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    # The package unpacks to package/
+    sourceRoot = "package";
 
-    # The package unpacks to package/, so we need to handle that
-    postUnpack = ''
-      mv $sourceRoot/package/* $sourceRoot/
-      rmdir $sourceRoot/package
+    nativeBuildInputs = [ pkgs.nodejs_22 ];
+
+    # Install dependencies and build
+    buildPhase = ''
+      export HOME=$TMPDIR
+      npm install --omit=dev --ignore-scripts
+      npm run build --if-present
     '';
 
-    # Node.js version requirement: >=20.6.0
-    nodejs = pkgs.nodejs_22;
+    installPhase = ''
+      mkdir -p $out/lib/node_modules/@mariozechner/pi-coding-agent
+      cp -r . $out/lib/node_modules/@mariozechner/pi-coding-agent/
+
+      mkdir -p $out/bin
+      ln -s $out/lib/node_modules/@mariozechner/pi-coding-agent/dist/cli.js $out/bin/pi
+    '';
 
     meta = with lib; {
       description = "A coding agent harness that helps users by reading files, executing commands, editing code, and writing new files";
