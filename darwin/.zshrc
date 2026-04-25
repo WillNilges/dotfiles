@@ -139,3 +139,4 @@ alias ocd="opencode"
 
 export DD_AI_GATEWAY_API_TOKEN=$(ddtool auth token rapid-ai-platform --datacenter us1.staging.dog)
 
+alias update-pi-models="~/.pi/update-models.sh"
