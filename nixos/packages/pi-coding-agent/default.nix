@@ -10,7 +10,7 @@ buildNpmPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "badlogic";
     repo = "pi-mono";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     sha256 = "";
   };
 
