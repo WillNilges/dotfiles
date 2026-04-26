@@ -27,16 +27,16 @@ buildNpmPackage (finalAttrs: {
   #npmBuildScript = "build";
   #npmPackFlags = [ "--ignore-scripts" ];
 
-  dontNpmBuild = true;
+  #dontNpmBuild = true;
 
   # Pack from the specific package directory in the monorepo
-  installPhase = ''
-    runHook preInstall
-    cd packages/coding-agent
-    npm pack --ignore-scripts
-    npm install -g --prefix $out *.tgz
-    runHook postInstall
-  '';
+  #installPhase = ''
+  #  runHook preInstall
+  #  cd packages/coding-agent
+  #  npm pack --ignore-scripts
+  #  npm install -g --prefix $out *.tgz
+  #  runHook postInstall
+  #'';
 
   meta = {
     description = "Pi is a minimal terminal coding harness. Adapt pi to your workflows, not the other way around. Extend it with TypeScript extensions, skills, prompt templates, and themes. Bundle them as pi packages and share via npm or git.";
