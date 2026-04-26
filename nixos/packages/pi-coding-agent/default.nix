@@ -1,38 +1,44 @@
 {
   lib,
-  buildNpmPackage,
-  fetchFromGitHub,
-  pkg-config,
-  pixman,
-  cairo,
-  pango,
+  stdenv,
+  fetchurl,
+  installShellFiles,
 }:
 
-buildNpmPackage (finalAttrs: {
-  pname = "pi-coding-agent";
+let
   version = "0.70.2";
-  src = fetchFromGitHub {
-    owner = "badlogic";
-    repo = "pi-mono";
-    tag = "v${finalAttrs.version}";
-    sha256 = "sha256-qqmJloTp3mWuZBGgpwoyoFyXx6QD8xhJEwCZb7xFabM=";
+  pname = "pi-coding-agent";
+
+  sources = {
+    x86_64-linux = fetchurl {
+      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-linux-x64.tar.gz";
+      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    };
+    aarch64-linux = fetchurl {
+      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-linux-arm64.tar.gz";
+      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    };
+    x86_64-darwin = fetchurl {
+      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-darwin-x64.tar.gz";
+      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    };
+    aarch64-darwin = fetchurl {
+      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-darwin-arm64.tar.gz";
+      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    };
   };
+in
+stdenv.mkDerivation {
+  inherit pname version;
 
-  npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
+  src = sources.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 
-  nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ pixman cairo pango ];
+  nativeBuildInputs = [ installShellFiles ];
 
-  # This is a monorepo with multiple packages that need to be built in order
-  npmBuildScript = "build";
-  npmPackFlags = [ "--ignore-scripts" ];
-
-  # Pack from the specific package directory in the monorepo
   installPhase = ''
     runHook preInstall
-    cd packages/coding-agent
-    npm pack --ignore-scripts
-    npm install -g --prefix $out *.tgz
+    mkdir -p $out/bin
+    install -m 755 pi $out/bin/pi
     runHook postInstall
   '';
 
@@ -41,6 +47,12 @@ buildNpmPackage (finalAttrs: {
     homepage = "https://pi.dev";
     license = lib.licenses.mit;
     mainProgram = "pi";
-    maintainers = with lib.maintainers; [ willnilges ];
+    maintainers = [ lib.maintainers.willnilges ];
+    platforms = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
   };
-})
+}
