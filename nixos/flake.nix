@@ -10,21 +10,29 @@
   };
 
   outputs = { self, disko, nixpkgs, ... }@inputs: {
+    # Custom packages overlay
+    overlays.default = final: prev: {
+      pi-coding-agent = final.callPackage ./packages/pi-coding-agent { };
+    };
+
     # Please replace my-nixos with your hostname
     nixosConfigurations.willardpad = nixpkgs.lib.nixosSystem {
       modules = [
+        { nixpkgs.overlays = [ self.overlays.default ]; }
         disko.nixosModules.disko
         ./host/willardpad
       ];
     };
     nixosConfigurations.thinkwillardthink = nixpkgs.lib.nixosSystem {
       modules = [
+        { nixpkgs.overlays = [ self.overlays.default ]; }
         disko.nixosModules.disko
         ./host/thinkwillardthink
       ];
     };
     nixosConfigurations.phoenix = nixpkgs.lib.nixosSystem {
       modules = [
+        { nixpkgs.overlays = [ self.overlays.default ]; }
         disko.nixosModules.disko
         ./host/phoenix
       ];
