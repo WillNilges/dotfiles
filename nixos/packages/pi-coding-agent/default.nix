@@ -14,7 +14,7 @@ buildNpmPackage (finalAttrs: {
     sha256 = "sha256-qqmJloTp3mWuZBGgpwoyoFyXx6QD8xhJEwCZb7xFabM=";
   };
 
-  npmDepsHash = "";
+  npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
   npmRoot = "packages/coding-agent";
 
   # The prepack script runs the build script, which we'd rather do in the build phase.
