@@ -2,6 +2,10 @@
   lib,
   buildNpmPackage,
   fetchFromGitHub,
+  pkg-config,
+  pixman,
+  cairo,
+  pango,
 }:
 
 buildNpmPackage (finalAttrs: {
@@ -16,7 +20,13 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
 
-  # The npm package is pre-built, no need to run build
+  nativeBuildInputs = [ pkg-config ];
+  buildInputs = [ pixman cairo pango ];
+
+  # This is a monorepo with multiple packages that need to be built in order
+  #npmBuildScript = "build";
+  #npmPackFlags = [ "--ignore-scripts" ];
+
   dontNpmBuild = true;
 
   # Pack from the specific package directory in the monorepo
