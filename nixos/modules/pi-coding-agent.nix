@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  pi-coding-agent = pkgs.buildNpmPackage {
+  pi-coding-agent = pkgs.stdenv.mkDerivation {
     pname = "pi-coding-agent";
     version = "0.70.2";
 
@@ -10,19 +10,22 @@ let
       hash = lib.fakeHash;
     };
 
-    npmDepsHash = lib.fakeHash;
-
-    # Package is already built in the tarball
-    dontNpmBuild = true;
+    nativeBuildInputs = [ pkgs.nodejs pkgs.makeWrapper ];
 
     installPhase = ''
       runHook preInstall
       
+      # Create a temp package dir and install dependencies
+      export HOME=$TMPDIR
+      npm install --ignore-scripts --production
+      
+      # Install to output
       mkdir -p $out/lib/node_modules/@mariozechner/pi-coding-agent
       cp -r . $out/lib/node_modules/@mariozechner/pi-coding-agent/
       
       mkdir -p $out/bin
-      ln -s $out/lib/node_modules/@mariozechner/pi-coding-agent/dist/cli.js $out/bin/pi
+      makeWrapper ${pkgs.nodejs}/bin/node $out/bin/pi \
+        --add-flags $out/lib/node_modules/@mariozechner/pi-coding-agent/dist/cli.js
       
       runHook postInstall
     '';
