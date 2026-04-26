@@ -12,7 +12,7 @@
 
         ../../modules/desktop-sway.nix
 
-        ../../modules/pi.nix
+        ../../modules/pi-coding-agent.nix
     ];
 
     networking.hostName = "willardpad"; # Define your hostname.
