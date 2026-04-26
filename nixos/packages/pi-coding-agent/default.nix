@@ -15,12 +15,19 @@ buildNpmPackage (finalAttrs: {
   };
 
   npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
-  npmRoot = "packages/coding-agent";
 
-  # The prepack script runs the build script, which we'd rather do in the build phase.
+  # This is a monorepo with multiple packages that need to be built in order
+  npmBuildScript = "build";
   npmPackFlags = [ "--ignore-scripts" ];
 
-  NODE_OPTIONS = "--openssl-legacy-provider";
+  # Pack from the specific package directory in the monorepo
+  installPhase = ''
+    runHook preInstall
+    cd packages/coding-agent
+    npm pack --ignore-scripts
+    npm install -g --prefix $out *.tgz
+    runHook postInstall
+  '';
 
   meta = {
     description = "Pi is a minimal terminal coding harness. Adapt pi to your workflows, not the other way around. Extend it with TypeScript extensions, skills, prompt templates, and themes. Bundle them as pi packages and share via npm or git.";
