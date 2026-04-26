@@ -2,6 +2,7 @@
   lib,
   buildNpmPackage,
   fetchFromGitHub,
+  pkg-config,
 }:
 
 buildNpmPackage (finalAttrs: {
@@ -15,6 +16,8 @@ buildNpmPackage (finalAttrs: {
   };
 
   npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
+
+  nativeBuildInputs = [ pkg-config ];
 
   # This is a monorepo with multiple packages that need to be built in order
   npmBuildScript = "build";
