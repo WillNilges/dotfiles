@@ -1,44 +1,30 @@
 {
   lib,
-  stdenv,
-  fetchurl,
-  installShellFiles,
+  buildNpmPackage,
+  fetchFromGitHub,
 }:
 
-let
-  version = "0.70.2";
+buildNpmPackage (finalAttrs: {
   pname = "pi-coding-agent";
-
-  sources = {
-    x86_64-linux = fetchurl {
-      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-linux-x64.tar.gz";
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-    };
-    aarch64-linux = fetchurl {
-      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-linux-arm64.tar.gz";
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-    };
-    x86_64-darwin = fetchurl {
-      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-darwin-x64.tar.gz";
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-    };
-    aarch64-darwin = fetchurl {
-      url = "https://github.com/badlogic/pi-mono/releases/download/v${version}/pi-darwin-arm64.tar.gz";
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-    };
+  version = "0.70.2";
+  src = fetchFromGitHub {
+    owner = "badlogic";
+    repo = "pi-mono";
+    tag = "v${finalAttrs.version}";
+    sha256 = "sha256-qqmJloTp3mWuZBGgpwoyoFyXx6QD8xhJEwCZb7xFabM=";
   };
-in
-stdenv.mkDerivation {
-  inherit pname version;
 
-  src = sources.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
+  npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
 
-  nativeBuildInputs = [ installShellFiles ];
+  # The npm package is pre-built, no need to run build
+  dontNpmBuild = true;
 
+  # Pack from the specific package directory in the monorepo
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/bin
-    install -m 755 pi $out/bin/pi
+    cd packages/coding-agent
+    npm pack --ignore-scripts
+    npm install -g --prefix $out *.tgz
     runHook postInstall
   '';
 
@@ -47,12 +33,6 @@ stdenv.mkDerivation {
     homepage = "https://pi.dev";
     license = lib.licenses.mit;
     mainProgram = "pi";
-    maintainers = [ lib.maintainers.willnilges ];
-    platforms = [
-      "x86_64-linux"
-      "aarch64-linux"
-      "x86_64-darwin"
-      "aarch64-darwin"
-    ];
+    maintainers = with lib.maintainers; [ willnilges ];
   };
-}
+})
