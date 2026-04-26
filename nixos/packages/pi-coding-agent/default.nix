@@ -27,7 +27,7 @@ buildNpmPackage (finalAttrs: {
   #npmBuildScript = "build";
   #npmPackFlags = [ "--ignore-scripts" ];
 
-  #dontNpmBuild = true;
+  dontNpmBuild = true;
 
   # Pack from the specific package directory in the monorepo
   #installPhase = ''
