@@ -32,6 +32,7 @@
       libreoffice
       mosh
       obs-studio
+      pi-coding-agent
       qpwgraph
       signal-desktop
       slack
