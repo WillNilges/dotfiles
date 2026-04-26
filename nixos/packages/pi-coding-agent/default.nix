@@ -5,6 +5,7 @@
   pkg-config,
   pixman,
   cairo,
+  pango,
 }:
 
 buildNpmPackage (finalAttrs: {
@@ -20,7 +21,7 @@ buildNpmPackage (finalAttrs: {
   npmDepsHash = "sha256-ImDvTC0Nm+IGYJuqjwUUfnOtA65uJvjlpP4h2Xt/2vE=";
 
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ pixman cairo ];
+  buildInputs = [ pixman cairo pango ];
 
   # This is a monorepo with multiple packages that need to be built in order
   npmBuildScript = "build";
