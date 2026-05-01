@@ -2,8 +2,15 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    overlays = {
+      outputs.overlays.unstable-packages
+    };
+    config = {
+      # Allow unfree packages
+      allowUnfree = true;
+    };
+  };
 
   # Run dynamically-linked executables "out of the box"
   # Using this for getting clangd working in neovim

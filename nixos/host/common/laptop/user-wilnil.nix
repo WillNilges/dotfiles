@@ -11,6 +11,7 @@
       ansible
       #bambu-studio # TODO: Add maker user packages
       blender
+      unstable.pi-coding-agent
       discord
       direnv
       easyeffects
