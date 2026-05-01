@@ -33,6 +33,7 @@
       libreoffice
       mosh
       obs-studio
+      opencode
       qpwgraph
       signal-desktop
       slack

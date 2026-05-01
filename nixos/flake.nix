@@ -10,24 +10,28 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, disko, nixpkgs, ... }@inputs: {
-    overlays = import ./overlays {inherit inputs};
-
+  outputs = { self, disko, nixpkgs, ... }@inputs: let
+    inherit (self) outputs;
+  in rec {
+    overlays = import ./overlays {inherit inputs;};
 
     # Please replace my-nixos with your hostname
     nixosConfigurations.willardpad = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit outputs;};
       modules = [
         disko.nixosModules.disko
         ./host/willardpad
       ];
     };
     nixosConfigurations.thinkwillardthink = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit outputs;};
       modules = [
         disko.nixosModules.disko
         ./host/thinkwillardthink
       ];
     };
     nixosConfigurations.phoenix = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit outputs;};
       modules = [
         disko.nixosModules.disko
         ./host/phoenix
