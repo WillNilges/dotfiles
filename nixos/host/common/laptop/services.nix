@@ -42,7 +42,7 @@
     zip
   ];
 
-  virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enable = true; # Still busted. https://github.com/NixOS/nixpkgs/pull/512148
   users.extraGroups.vboxusers.members = ["wilnil"];
 
   services.fwupd.enable = true;
