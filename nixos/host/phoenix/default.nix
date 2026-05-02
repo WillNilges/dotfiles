@@ -13,7 +13,6 @@
         ../../modules/driver-nvidia.nix
         ../../modules/openrazer.nix
         ../../modules/steam.nix
-        ../../modules/opencode.nix
         ../../modules/ssh-server.nix
     ];
 
