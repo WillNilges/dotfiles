@@ -152,3 +152,5 @@ export LIBCLANG_PATH="/home/wilnil/.rustup/toolchains/esp/xtensa-esp32-elf-clang
 
 eval "$(direnv hook zsh)"
 source ~/.inference-token
+alias ocd="opencode"
+alias ocd-update-models="bash ~/.config/opencode/update_models.sh"

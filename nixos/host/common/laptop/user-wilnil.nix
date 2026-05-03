@@ -22,6 +22,7 @@
       helix
       inkscape
       ironwail
+      jq
       kdePackages.kate
       kdePackages.kamoso
       kdePackages.kdenlive

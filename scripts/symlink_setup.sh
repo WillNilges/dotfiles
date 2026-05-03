@@ -17,6 +17,7 @@ declare -a links=(
 	~/Code/dotfiles/helix ~/.config/helix
 	~/Code/dotfiles/zed ~/.config/zed
     ~/Code/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
+    ~/Code/dotfiles/opencode/update_models.sh ~/.config/opencode/update_models.sh
 
 	# Unused on willardpad
 	#~/Code/dotfiles/openbox ~/.config/openbox
