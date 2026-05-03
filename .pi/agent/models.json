@@ -1,0 +1,17 @@
+{
+  "providers": {
+    "willards-world": {
+      "baseUrl": "https://mac.willard.gay/v1",
+      "api": "openai-completions",
+      "apiKey": "!chom",
+      "headers": {
+      },
+      "models": [
+        {
+          "id": "id",
+          "name": "name"
+        }
+      ]
+    }
+  }
+}
