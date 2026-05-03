@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 declare -a links=(
 	~/Code/dotfiles/alacritty.toml ~/.config/alacritty.toml
 	~/Code/dotfiles/.zshrc ~/.zshrc
@@ -14,9 +16,14 @@ declare -a links=(
 	~/Code/dotfiles/rofi ~/.config/rofi
 	~/Code/dotfiles/helix ~/.config/helix
 	~/Code/dotfiles/zed ~/.config/zed
+    ~/Code/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 
 	# Unused on willardpad
 	#~/Code/dotfiles/openbox ~/.config/openbox
+)
+
+declare -a dirs=(
+    ~/.config/opencode
 )
 
 test_link() {
@@ -32,6 +39,13 @@ test_link() {
 	   echo "Missing"
 	fi
 }
+
+# Ensure the destinations exist
+for ((i=0; i<${#dirs[@]}; i+=1)); do
+	d=${dirs[i]}
+    echo "Creating $d"
+    mkdir -p $d
+done
 
 for ((i=0; i<${#links[@]}; i+=2)); do
 	src=${links[i]}

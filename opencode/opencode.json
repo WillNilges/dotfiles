@@ -35,14 +35,22 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Willard's World",
       "options": {
-        "baseURL": "https://mac.willard.gay/v1/",
+        "baseURL": "http://mac.willard.gay:8080/v1/",
         "apiKey": "{env:WILLARDS_WORLD_INFERENCE_TOKEN}",
         "headers": {
         }
       },
       "models": {
-        "model/name": {
-          "name": "model/name"
+        "Qwen3.6": {
+          "name": "Qwen3.6"
+        },
+
+        "GLM-4.7-Flash": {
+          "name": "GLM-4.7-Flash"
+        },
+
+        "Gemma4": {
+          "name": "Gemma4"
         }
       }
     }
