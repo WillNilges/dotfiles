@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+  ],
+  "disabled_providers": [
+    "opencode"
+  ],
+  "share": "disabled",
+  "permission": {
+    "edit": "ask",
+    "webfetch": "ask",
+    "doom_loop": "ask",
+    "external_directory": "ask",
+    "bash": {
+      "*": "ask",
+      "pwd": "allow",
+      "git status": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git diff *": "allow",
+      "git blame *": "allow",
+      "gh pr view *": "allow",
+      "grep *": "allow",
+      "rg *": "allow",
+      "ls *": "allow",
+      "tail *": "allow",
+      "head *": "allow",
+      "cat *": "allow"
+    }
+  },
+  "mcp": {
+  },
+  "provider": {
+    "datadog": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Willard's World",
+      "options": {
+        "baseURL": "https://mac.willard.gay/v1/",
+        "apiKey": "{env:WILLARDS_WORLD_INFERENCE_TOKEN}",
+        "headers": {
+        }
+      },
+      "models": {
+        "model/name": {
+          "name": "model/name"
+        }
+      }
+    }
+  }
+}
