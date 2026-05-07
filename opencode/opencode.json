@@ -1,7 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-  ],
+  "plugin": [],
   "disabled_providers": [
     "opencode"
   ],
@@ -28,8 +27,7 @@
       "cat *": "allow"
     }
   },
-  "mcp": {
-  },
+  "mcp": {},
   "provider": {
     "willard": {
       "npm": "@ai-sdk/openai-compatible",
@@ -37,20 +35,32 @@
       "options": {
         "baseURL": "http://mac.willard.gay:8080/v1/",
         "apiKey": "{env:WILLARDS_WORLD_INFERENCE_TOKEN}",
-        "headers": {
-        }
+        "headers": {}
       },
       "models": {
-        "Qwen3.6": {
-          "name": "Qwen3.6"
+        "unsloth/GLM-4.7-Flash-GGUF:Q4_K_XL": {
+          "name": "unsloth/GLM-4.7-Flash-GGUF:Q4_K_XL"
         },
-
-        "GLM-4.7-Flash": {
-          "name": "GLM-4.7-Flash"
+        "unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL": {
+          "name": "unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL"
         },
-
-        "Gemma4": {
-          "name": "Gemma4"
+        "unsloth/Qwen3-Coder-Next-GGUF:Q4_K_XL": {
+          "name": "unsloth/Qwen3-Coder-Next-GGUF:Q4_K_XL"
+        },
+        "unsloth/Qwen3-Coder-Next-GGUF:Q5_K_XL": {
+          "name": "unsloth/Qwen3-Coder-Next-GGUF:Q5_K_XL"
+        },
+        "unsloth/Qwen3-Coder-Next-GGUF:Q8_K_XL": {
+          "name": "unsloth/Qwen3-Coder-Next-GGUF:Q8_K_XL"
+        },
+        "unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_XL": {
+          "name": "unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_XL"
+        },
+        "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_XL": {
+          "name": "unsloth/Qwen3.6-35B-A3B-GGUF:UD-Q4_K_XL"
+        },
+        "unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_XL": {
+          "name": "unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_XL"
         }
       }
     }

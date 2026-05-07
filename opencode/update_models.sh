@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-CONFIG_FILE="$HOME/.config/opencode/opencode.json"
+CONFIG_FILE="$HOME/Code/dotfiles/opencode/opencode.json"
 BACKUP_FILE="$HOME/.config/opencode/opencode.json.bak"
 MODELS_URL="http://mac.willard.gay:8080/models"
 

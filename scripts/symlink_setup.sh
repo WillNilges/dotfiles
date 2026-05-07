@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+#set -euo pipefail
 
 declare -a links=(
 	~/Code/dotfiles/alacritty.toml ~/.config/alacritty.toml
