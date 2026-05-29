@@ -201,6 +201,17 @@ label:focus {
     background-color: #f53c3c;
 }
 
+#network.disabled {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+
+#bluetooth.disabled {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
 /*
 #pulseaudio {
     background-color: #f1c40f;

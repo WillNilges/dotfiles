@@ -167,6 +167,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
+        "format-disabled": "disabled ",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "on-click": "networkmanager_dmenu"
     },
@@ -174,6 +175,7 @@
     "bluetooth": {
         "format-on": "on ",
         "format-connected": " ",
+        "format-disabled": "disabled ",
         "on-click": "blueman-manager",
     },
     "pulseaudio": {
