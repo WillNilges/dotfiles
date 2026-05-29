@@ -27,7 +27,7 @@
       kdePackages.kamoso
       kdePackages.kdenlive
       kdePackages.okular
-      kicad
+      # kicad # TODO: Add maker user packages (kicad is fucking huge)
       krita
       kubectl
       kubernetes-helm
