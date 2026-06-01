@@ -33,6 +33,9 @@
       modules = [
         disko.nixosModules.disko
         ./host/thinkwillardthink
+        {
+          nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+        }
       ];
     };
     nixosConfigurations.phoenix = nixpkgs.lib.nixosSystem {
