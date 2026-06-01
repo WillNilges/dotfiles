@@ -42,7 +42,7 @@ set $files dolphin
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg /home/wilnil/Pictures/lichen-rock.png fill
+output * bg /home/wilnil/Pictures/lichen-rock.png fill
 #
 # Example configuration:
 #
@@ -51,7 +51,7 @@ set $files dolphin
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # For HiDPI
-#output eDP-1 scale 1.25
+output eDP-1 scale 1.25
 
 ### Idle configuration
 #
