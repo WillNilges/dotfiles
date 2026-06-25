@@ -3,7 +3,7 @@
 
   inputs = {
     # NixOS official package source, using the nixos-25.11 branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     #dolphin-overlay.url = "github:rumboon/dolphin-overlay"; # https://github.com/rumboon/dolphin-overlay/pull/4
     dolphin-overlay.url = "github:FUFSoB/dolphin-overlay"; # Waiting on above PR to be merged
