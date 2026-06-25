@@ -16,6 +16,7 @@
     inherit (self) outputs;
   in rec {
     overlays = import ./overlays {inherit inputs;};
+    openblas-overlay = overlays.disable-openblas-tests;
 
     # Please replace my-nixos with your hostname
     nixosConfigurations.willardpad = nixpkgs.lib.nixosSystem {
@@ -24,7 +25,10 @@
         disko.nixosModules.disko
         ./host/willardpad
         {
-          nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+          nixpkgs.overlays = [
+            dolphin-overlay.overlays.default
+            openblas-overlay
+          ];
         }
       ];
     };
@@ -34,7 +38,10 @@
         disko.nixosModules.disko
         ./host/thinkwillardthink
         {
-          nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+          nixpkgs.overlays = [
+            dolphin-overlay.overlays.default
+            openblas-overlay
+          ];
         }
       ];
     };
@@ -43,6 +50,9 @@
       modules = [
         disko.nixosModules.disko
         ./host/phoenix
+        {
+          nixpkgs.overlays = [ openblas-overlay ];
+        }
       ];
     };
   };
