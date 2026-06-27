@@ -2,7 +2,7 @@
 set $bg     #2c2c2c
 set $fg     #9f9f9f
 set $hi     #efef8f
-set $ac     #fff59d
+set $ac     #f4bf75
 set $tx     #040404
 set $ia     #8f8f8f
 set $be     #8faf9f

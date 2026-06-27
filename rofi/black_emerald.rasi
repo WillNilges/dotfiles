@@ -10,7 +10,7 @@
     alternate-normal-background: transparent;
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  rgba ( 255, 195, 156, 100 % );
-    emerald:                      #fff59d;
+    emerald:                      #f4bf75;
     urgent-foreground:           rgba ( 243, 132, 61, 100 % );
     alternate-urgent-background: transparent;
     active-foreground:           #FFFFFF;
