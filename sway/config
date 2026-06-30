@@ -22,6 +22,10 @@ input "type:keyboard" {
     xkb_options "caps:escape, compose:ralt"
 }
 
+input "type:touchpad" {
+    events disabled
+}
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -43,6 +47,7 @@ set $files dolphin
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg /home/wilnil/Pictures/lichen-rock.png fill
+output * bg /home/wilnil/Pictures/japan-fields.png fill
 #
 # Example configuration:
 #
