@@ -11,6 +11,7 @@
       ansible
       #bambu-studio # TODO: Add maker user packages
       blender
+      btop
       unstable.pi-coding-agent
       discord
       direnv
@@ -32,6 +33,7 @@
       kubectl
       kubernetes-helm
       libreoffice
+      mesa-demos
       mosh
       obs-studio
       opencode
