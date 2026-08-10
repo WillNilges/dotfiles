@@ -94,6 +94,18 @@
   programs.firefox.package = pkgs.librewolf;
   programs.git.enable = true;
   programs.htop.enable = true;
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-gstreamer
+      obs-vkcapture
+    ];
+  };
   programs.winbox = {
     enable = true;
     package = pkgs.winbox4;

@@ -16,7 +16,7 @@
       discord
       direnv
       easyeffects
-      element-desktop
+      # element-desktop
       freecad
       gcc
       gimp
@@ -35,18 +35,16 @@
       libreoffice
       mesa-demos
       mosh
-      obs-studio
       opencode
       qpwgraph
       signal-desktop
       slack
       speedcrunch
       tiled
-      trilium-desktop
+      #trilium-desktop
       vlc
       yt-dlp
       wireshark
-      zed-editor
     ];
     shell = pkgs.zsh;
   };
