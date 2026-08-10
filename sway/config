@@ -1,8 +1,7 @@
-# color defines for zenburn styled i3
 set $bg     #2c2c2c
 set $fg     #9f9f9f
 set $hi     #efef8f
-set $ac     #f4bf75
+set $ac     #55cc99
 set $tx     #040404
 set $ia     #8f8f8f
 set $be     #8faf9f
@@ -22,9 +21,9 @@ input "type:keyboard" {
     xkb_options "caps:escape, compose:ralt"
 }
 
-input "type:touchpad" {
-    events disabled
-}
+#input "type:touchpad" {
+#    events disabled
+#}
 
 ### Variables
 #
@@ -46,8 +45,8 @@ set $files dolphin
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 #output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg /home/wilnil/Pictures/lichen-rock.png fill
-output * bg /home/wilnil/Pictures/japan-fields.png fill
+output * bg /home/wilnil/Pictures/lichen-rock.png fill
+#output * bg /home/wilnil/Pictures/japan-fields.png fill
 #
 # Example configuration:
 #
@@ -56,7 +55,7 @@ output * bg /home/wilnil/Pictures/japan-fields.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # For HiDPI
-#output eDP-1 scale 1.25
+output eDP-1 scale 1.25
 
 ### Idle configuration
 #
