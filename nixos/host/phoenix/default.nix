@@ -14,6 +14,8 @@
         ../../modules/openrazer.nix
         ../../modules/steam.nix
         ../../modules/ssh-server.nix
+
+        ../../modules/kernel-latest.nix
     ];
 
     networking.hostName = "phoenix"; # Define your hostname.

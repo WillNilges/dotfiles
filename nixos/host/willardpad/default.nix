@@ -11,6 +11,7 @@
         ../../modules/vpn-wireguard.nix
 
         ../../modules/desktop-sway.nix
+        ../../modules/kernel-6_18.nix # To deal with zen crashes
     ];
 
     networking.hostName = "willardpad"; # Define your hostname.
