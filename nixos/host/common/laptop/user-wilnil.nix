@@ -20,6 +20,7 @@
       freecad
       gcc
       gimp
+      gnucash
       helix
       inkscape
       ironwail
@@ -41,11 +42,15 @@
       slack
       speedcrunch
       tiled
-      #trilium-desktop
+      trilium-desktop
       vlc
       yt-dlp
       wireshark
     ];
     shell = pkgs.zsh;
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-40.10.5"
+  ];
 }
