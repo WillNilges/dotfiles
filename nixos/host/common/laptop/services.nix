@@ -96,7 +96,6 @@
   ];
 
   # Enable these packages.
-  programs.chromium.enable = true;
   programs.firefox.enable = true;
   programs.firefox.package = pkgs.librewolf;
   programs.git.enable = true;

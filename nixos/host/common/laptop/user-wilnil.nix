@@ -12,13 +12,14 @@
       #bambu-studio # TODO: Add maker user packages
       blender
       btop
-      unstable.pi-coding-agent
       discord
       direnv
+      chirp
       easyeffects
       # element-desktop
       freecad
       gcc
+      gh
       gimp
       gnucash
       helix
@@ -37,12 +38,16 @@
       mesa-demos
       mosh
       opencode
+      unstable.pi-coding-agent
       qpwgraph
       signal-desktop
       slack
+      sshfs
+      terraform
       speedcrunch
       tiled
       trilium-desktop
+      vault
       vlc
       yt-dlp
       wireshark
