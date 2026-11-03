@@ -84,9 +84,15 @@
 
     #services.tailscale.enable = true;
 
+  # Printing
+  # https://wiki.nixos.org/wiki/Printing
+  # services.printing.enable = true;
+  # services.ipp-usb.enable = true;
+
   # fonts
   fonts.packages = [
     pkgs.nerd-fonts.iosevka-term
+    pkgs.comic-mono
   ];
 
   # Enable these packages.

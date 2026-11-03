@@ -11,6 +11,7 @@
         ../../modules/vpn-wireguard.nix
 
         ../../modules/desktop-sway.nix
+        ../../modules/kernel-latest.nix
     ];
 
     networking.hostName = "willardpad"; # Define your hostname.

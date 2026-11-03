@@ -137,6 +137,7 @@ cfg_del() {
 export KUBECONFIG=~/.kube/config-dev3
 alias prod1="KUBECONFIG=~/.kube/config-prod1 kubectl"
 alias prod2="KUBECONFIG=~/.kube/config-prod2 kubectl"
+alias prod3="KUBECONFIG=~/.kube/config-prod3 kubectl"
 alias dev3="KUBECONFIG=~/.kube/config-dev3 kubectl"
 alias gamma1="KUBECONFIG=~/.kube/config-gamma1 kubectl"
 
